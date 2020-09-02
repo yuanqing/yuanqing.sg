@@ -1,0 +1,29 @@
+@import "./constants.scss";
+
+html {
+  font-size: 16px;
+}
+
+@media (min-width: $width-m) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (min-width: $width-l) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  color: $color-white;
+  font-weight: $font-weight-regular;
+  font-family: $font-family;
+  background-color: $color-black;
+}
+
+::selection {
+  color: $color-black;
+  // https://stackoverflow.com/a/22751702
+  background-color: rgba($color-white, 0.99);
+}

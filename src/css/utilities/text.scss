@@ -1,0 +1,20 @@
+@import "../constants.scss";
+
+.text-s {
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+}
+.text-m {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+.text-l {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.03rem;
+}
+.text-xl {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  letter-spacing: -0.03rem;
+}
