@@ -39,23 +39,16 @@
     "sirv-cli": "^1.0.6",
     "standard": "^14.3.4",
     "stylelint": "^13.6.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-order": "^4.1.0",
-    "stylelint-prettier": "^1.1.2",
+    "stylelint-config-yuanqing": "^0.0.1",
     "vinyl-fs": "^3.0.3",
     "vinyl-ftp": "^0.6.1"
   },
   "lint-staged": {
     "*.scss": [
-      "stylelint",
-      "prettier"
+      "stylelint"
     ]
   },
   "stylelint": {
-    "extends": [
-      "stylelint-prettier/recommended",
-      "stylelint-config-rational-order"
-    ]
+    "extends": "stylelint-config-yuanqing"
   }
 }
