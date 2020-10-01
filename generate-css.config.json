@@ -1,0 +1,50 @@
+{
+  "reset": false,
+  "theme": {
+    "baseFontSize": {
+      "default": "16px",
+      "md": "18px",
+      "lg": "20px"
+    },
+    "borderRadius": {
+      "default": "50%"
+    },
+    "breakpoint": {
+      "md": "540px",
+      "lg": "960px"
+    },
+    "color": {
+      "black": "#000000",
+      "gray": "#7f7f7f",
+      "white": "#ffffff",
+      "white-selection": "rgba(255, 255, 255, 0.99)"
+    },
+    "fontFamily": {
+      "default": "'Inter', 'Helvetica', sans-serif"
+    },
+    "fontSize": {
+      "sm": "0.8125rem",
+      "md": "0.9375rem",
+      "lg": "1.25rem",
+      "xl": "1.75rem"
+    },
+    "fontWeight": {
+      "regular": "400",
+      "bold": "700"
+    },
+    "letterSpacing": {
+      "lg": "-0.03rem",
+      "xl": "-0.03rem"
+    },
+    "lineHeight": {
+      "sm": "1.5rem",
+      "md": "1.5rem",
+      "lg": "1.75rem",
+      "xl": "2rem"
+    },
+    "maxWidth": {
+      "lg": "960px"
+    },
+    "space": "0.25rem"
+  }
+}

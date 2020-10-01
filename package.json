@@ -2,22 +2,22 @@
   "private": true,
   "scripts": {
     "build": "yarn run clean && yarn run build-html && yarn run build-css && yarn run build-media",
-    "build-css": "sass --no-source-map src/css/style.scss build/style.css && purgecss --config purgecss.config.js --css build/style.css --content 'build/**/*.html' --output build && csso build/style.css --force-media-merge --output build/style.css",
+    "build-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css",
     "build-html": "html-minifier --collapse-whitespace --input-dir src/html --minify-js true --output-dir build --remove-tag-whitespace",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
     "clean": "rimraf '*.log' build",
     "deploy": "yarn run build && node -r dotenv/config scripts/deploy.js",
     "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-js' 'prettier --loglevel error --write \"*.json\"'",
-    "fix-css": "stylelint --fix 'src/**/*.scss'",
-    "fix-js": "prettier-standard '*.js' 'scripts/**/*.js'",
+    "fix-css": "stylelint --fix 'src/**/*.css'",
+    "fix-js": "prettier-standard 'scripts/**/*.js'",
     "lint": "concurrently --raw 'yarn run lint-css' 'yarn run lint-js'",
-    "lint-css": "stylelint 'src/**/*.scss'",
-    "lint-js": "standard '*.js' 'scripts/**/*.js'",
+    "lint-css": "stylelint 'src/**/*.css'",
+    "lint-js": "standard 'scripts/**/*.js'",
     "reset": "yarn run clean && rimraf node_modules yarn.lock && yarn install",
     "serve": "mkdirp build && sirv build --dev --host --port 4242 --quiet",
     "start": "yarn run build && concurrently --raw 'yarn run serve' 'open-cli http://0.0.0.0:4242'",
     "watch": "yarn run clean && concurrently --raw 'yarn run serve' 'yarn run watch-css' 'yarn run watch-html' 'yarn run watch-media'",
-    "watch-css": "chokidar 'src/css/**/*.scss' --command 'sass src/css/style.scss build/style.css' --initial --silent",
+    "watch-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --watch",
     "watch-html": "chokidar 'src/html/**/*.html' --command 'cpy \"src/html/*.html\" build' --initial --silent",
     "watch-media": "chokidar 'media/**/*' --command 'imagemin \"media/**/*\" --out-dir build/media' --initial --silent"
   },
@@ -25,17 +25,15 @@
     "chokidar-cli": "^2.1.0",
     "concurrently": "^5.3.0",
     "cpy-cli": "^3.1.1",
-    "csso-cli": "^3.0.0",
     "dotenv": "^8.2.0",
+    "generate-css": "^0.0.5",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^6.0.0",
     "mkdirp": "^1.0.4",
     "open-cli": "^6.0.1",
     "prettier": "^2.1.1",
     "prettier-standard": "^16.4.1",
-    "purgecss": "^2.3.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.10",
     "sirv-cli": "^1.0.6",
     "standard": "^14.3.4",
     "stylelint": "^13.6.1",
@@ -44,7 +42,7 @@
     "vinyl-ftp": "^0.6.1"
   },
   "lint-staged": {
-    "*.scss": [
+    "*.css": [
       "stylelint"
     ]
   },

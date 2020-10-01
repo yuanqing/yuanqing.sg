@@ -1,5 +1,12 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+*,
+::before,
+::after {
   box-sizing: border-box;
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 0;
 }
 
 html {
