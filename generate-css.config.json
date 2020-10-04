@@ -3,15 +3,16 @@
   "theme": {
     "baseFontSize": {
       "default": "16px",
-      "md": "18px",
-      "lg": "20px"
+      "sm": "18px",
+      "md": "20px"
     },
+    "baseSpace": "0.25rem",
     "borderRadius": {
       "default": "50%"
     },
     "breakpoint": {
-      "md": "540px",
-      "lg": "960px"
+      "sm": "540px",
+      "md": "960px"
     },
     "color": {
       "black": "#000000",
@@ -43,8 +44,7 @@
       "xl": "2rem"
     },
     "maxWidth": {
-      "lg": "960px"
-    },
-    "space": "0.25rem"
+      "md": "960px"
+    }
   }
 }

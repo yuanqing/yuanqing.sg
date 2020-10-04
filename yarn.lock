@@ -908,9 +908,9 @@ camelcase@^4.1.0:
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001135:
-  version "1.0.30001141"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001141.tgz#214a196d81aa938b268fb0cb6d8fab23fdf14378"
-  integrity sha512-EHfInJHoQTmlMdVZrEc5gmwPc0zyN/hVufmGHPbVNQwlk7tJfCmQ2ysRZMY2MeleBivALUTyyxXnQjK18XrVpA==
+  version "1.0.30001143"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001143.tgz#560f2cfb9f313d1d7e52eb8dac0e4e36c8821c0d"
+  integrity sha512-p/PO5YbwmCpBJPxjOiKBvAlUPgF8dExhfEpnsH+ys4N/791WHrYrGg0cyHiAURl5hSbx5vIcjKmQAP6sHDYH3w==
 
 caw@^2.0.0, caw@^2.0.1:
   version "2.0.1"
@@ -1393,9 +1393,9 @@ css-tree@1.0.0-alpha.39:
     source-map "^0.6.1"
 
 css-what@^3.2.1:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/css-what/-/css-what-3.3.0.tgz#10fec696a9ece2e591ac772d759aacabac38cd39"
-  integrity sha512-pv9JPyatiPaQ6pf4OvD/dbfm0o5LviWmwxNWzblYf/1u9QZd0ihV+PMwy5jdQWQ3349kZmKEx9WXuSka2dM4cg==
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-3.4.1.tgz#81cb70b609e4b1351b1e54cbc90fd9c54af86e2e"
+  integrity sha512-wHOppVDKl4vTAOWzJt5Ek37Sgd9qq1Bmj/T1OjvicWbU5W7ru7Pqbn0Jdqii3Drx/h+dixHKXNhZYx7blthL7g==
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -2574,10 +2574,10 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generate-css@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/generate-css/-/generate-css-0.0.5.tgz#880cd6ad55541e00b60817ce435cbf9ea85851f4"
-  integrity sha512-IirC9JuS8oOe4Z09u/HSvvFh4WKhaeswUlZOTJu6DSEUy1yhmLmEQxK5qiQaw2GDVLeErbeuHuM1jym20/coTQ==
+generate-css@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/generate-css/-/generate-css-0.0.6.tgz#0ab6b67469a3d8201256b7885af9ea00b7f0540c"
+  integrity sha512-vXTPuUOujfPH5J2QcQRat8K9VT4abNwN6d91yFd0YG0aDRzaQq9IUfD+OItheq8u4cuPaQKXZ0X9z5NqVi/1HA==
   dependencies:
     chokidar "^3.4.2"
     csso "^4.0.3"
