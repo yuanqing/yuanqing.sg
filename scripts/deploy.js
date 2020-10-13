@@ -13,7 +13,7 @@ function main () {
     .src(['./build/**'], {
       base: './build',
       buffer: false,
-      dot: true
+      dot: false
     })
     .pipe(connection.dest(process.env.FTP_DIRECTORY))
 }
