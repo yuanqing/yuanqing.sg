@@ -26,20 +26,70 @@
     "concurrently": "^5.3.0",
     "cpy-cli": "^3.1.1",
     "dotenv": "^8.2.0",
-    "generate-css": "^0.0.6",
+    "generate-css": "^0.0.8",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^6.0.0",
     "mkdirp": "^1.0.4",
     "open-cli": "^6.0.1",
-    "prettier": "^2.1.1",
+    "prettier": "^2.1.2",
     "prettier-standard": "^16.4.1",
     "rimraf": "^3.0.2",
     "sirv-cli": "^1.0.6",
     "standard": "^14.3.4",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.7.2",
     "stylelint-config-yuanqing": "^0.0.1",
     "vinyl-fs": "^3.0.3",
     "vinyl-ftp": "^0.6.1"
+  },
+  "generate-css": {
+    "reset": false,
+    "theme": {
+      "baseFontSize": {
+        "default": "16px",
+        "sm": "18px",
+        "md": "20px"
+      },
+      "baseSpace": "0.25rem",
+      "borderRadius": {
+        "default": "50%"
+      },
+      "breakpoint": {
+        "sm": "540px",
+        "md": "960px"
+      },
+      "color": {
+        "black": "#000000",
+        "gray": "#7f7f7f",
+        "white": "#ffffff",
+        "white-selection": "rgba(255, 255, 255, 0.99)"
+      },
+      "fontFamily": {
+        "default": "'Inter', 'Helvetica', sans-serif"
+      },
+      "fontSize": {
+        "sm": "0.8125rem",
+        "md": "0.9375rem",
+        "lg": "1.25rem",
+        "xl": "1.75rem"
+      },
+      "fontWeight": {
+        "regular": "400",
+        "bold": "700"
+      },
+      "letterSpacing": {
+        "lg": "-0.03rem",
+        "xl": "-0.03rem"
+      },
+      "lineHeight": {
+        "sm": "1.5rem",
+        "md": "1.5rem",
+        "lg": "1.75rem",
+        "xl": "2rem"
+      },
+      "maxWidth": {
+        "md": "960px"
+      }
+    }
   },
   "lint-staged": {
     "*.css": [
