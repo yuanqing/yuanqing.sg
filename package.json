@@ -51,7 +51,7 @@
       },
       "baseSpace": "0.25rem",
       "borderRadius": {
-        "default": "50%"
+        "default": "2px"
       },
       "breakpoint": {
         "sm": "540px",
