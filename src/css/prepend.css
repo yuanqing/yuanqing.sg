@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&text=%E2%86%92&display=swap");
 
 *,
 ::before,
@@ -25,6 +26,7 @@ ul {
 
 h1,
 h2,
+h3,
 p,
 ul,
 li {
@@ -32,7 +34,8 @@ li {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font: inherit;
 }
 

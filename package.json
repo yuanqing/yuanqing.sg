@@ -51,11 +51,11 @@
       },
       "baseSpace": "0.25rem",
       "borderRadius": {
-        "default": "2px"
+        "default": "4px"
       },
       "breakpoint": {
         "sm": "540px",
-        "md": "960px"
+        "md": "880px"
       },
       "color": {
         "black": "#000000",
@@ -70,7 +70,7 @@
         "sm": "0.8125rem",
         "md": "0.9375rem",
         "lg": "1.25rem",
-        "xl": "1.75rem"
+        "xl": "2rem"
       },
       "fontWeight": {
         "regular": "400",
@@ -81,13 +81,14 @@
         "xl": "-0.03rem"
       },
       "lineHeight": {
-        "sm": "1.5rem",
+        "sm": "1.25rem",
         "md": "1.5rem",
         "lg": "1.75rem",
         "xl": "2rem"
       },
       "maxWidth": {
-        "md": "960px"
+        "sm": "640px",
+        "md": "720px"
       }
     }
   },
