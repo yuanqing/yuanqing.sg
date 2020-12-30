@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn run clean && yarn run build-html && yarn run build-css && yarn run build-media",
+    "build": "yarn run clean && yarn run build-html && yarn run build-css && yarn run build-media && yarn run build-cname",
+    "build-cname": "cp CNAME build/CNAME",
     "build-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --minify",
     "build-html": "html-minifier --collapse-whitespace --input-dir src/html --minify-js true --output-dir build --remove-tag-whitespace",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
