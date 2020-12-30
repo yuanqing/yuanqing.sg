@@ -4,16 +4,17 @@
     "build": "yarn run clean && yarn run build-html && yarn run build-css && yarn run build-media && yarn run build-cname",
     "build-cname": "cp CNAME build/CNAME",
     "build-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --minify",
-    "build-html": "html-minifier --collapse-whitespace --input-dir src/html --minify-js true --output-dir build --remove-tag-whitespace",
+    "build-html": "ts-node scripts/build-html.ts && html-minifier --collapse-whitespace --input-dir build --minify-js true --output-dir build --remove-tag-whitespace",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
     "clean": "rimraf '*.log' build",
-    "deploy": "yarn run build && gh-pages --dist build",
-    "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-js' 'prettier --loglevel error --write \"*.json\"'",
+    "deploy": "yarn run fetch-data && yarn run build && gh-pages --dist build",
+    "fetch-data": "ts-node --require dotenv/config scripts/fetch-data.ts",
+    "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-ts'",
     "fix-css": "stylelint --fix 'src/**/*.css'",
-    "fix-js": "prettier-standard 'scripts/**/*.js'",
-    "lint": "concurrently --raw 'yarn run lint-css' 'yarn run lint-js'",
+    "fix-ts": "eslint --fix 'scripts/**/*.ts'",
+    "lint": "concurrently --raw 'yarn run lint-css' 'yarn run lint-ts'",
     "lint-css": "stylelint 'src/**/*.css'",
-    "lint-js": "standard 'scripts/**/*.js'",
+    "lint-ts": "eslint 'scripts/**/*.ts'",
     "reset": "yarn run clean && rimraf node_modules yarn.lock && yarn install",
     "serve": "mkdirp build && sirv build --dev --host --port 4242 --quiet",
     "start": "yarn run build && concurrently --raw 'yarn run serve' 'open-cli http://0.0.0.0:4242'",
@@ -23,24 +24,35 @@
     "watch-media": "chokidar 'media/**/*' --command 'imagemin \"media/**/*\" --out-dir build/media' --initial --silent"
   },
   "devDependencies": {
+    "@octokit/rest": "^18.0.12",
+    "@types/fs-extra": "^9.0.6",
+    "@types/node": "^14.14.16",
     "chokidar-cli": "^2.1.0",
     "concurrently": "^5.3.0",
     "cpy-cli": "^3.1.1",
     "dotenv": "^8.2.0",
+    "eslint": "^7.16.0",
+    "eslint-config-yuanqing": "^0.0.4",
+    "fs-extra": "^9.0.1",
     "generate-css": "^0.0.9",
+    "gh-pages": "^3.1.0",
+    "globby": "^11.0.1",
     "html-minifier": "^4.0.0",
     "husky": "^4.3.6",
     "imagemin-cli": "^6.0.0",
+    "isomorphic-unfetch": "^3.1.0",
     "lint-staged": "^10.5.3",
+    "lodash.template": "^4.5.0",
     "mkdirp": "^1.0.4",
     "open-cli": "^6.0.1",
     "prettier": "^2.2.1",
-    "prettier-standard": "^16.4.1",
     "rimraf": "^3.0.2",
     "sirv-cli": "^1.0.10",
     "standard": "^16.0.3",
     "stylelint": "^13.8.0",
-    "stylelint-config-yuanqing": "^0.0.1"
+    "stylelint-config-yuanqing": "^0.0.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   },
   "generate-css": {
     "reset": false,
@@ -93,6 +105,9 @@
       }
     }
   },
+  "eslintConfig": {
+    "extends": "yuanqing"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -102,10 +117,11 @@
     "*.css": [
       "stylelint"
     ],
-    "*.js": [
-      "standard"
+    "*.ts": [
+      "eslint"
     ]
   },
+  "prettier": "eslint-config-yuanqing/prettier",
   "stylelint": {
     "extends": "stylelint-config-yuanqing"
   }
