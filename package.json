@@ -7,7 +7,7 @@
     "build-html": "ts-node scripts/build-html.ts && html-minifier --collapse-whitespace --input-dir build --minify-js true --output-dir build --remove-tag-whitespace",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
     "clean": "rimraf '*.log' build",
-    "deploy": "yarn run fetch-data && yarn run build && gh-pages --dist build",
+    "deploy": "yarn run fetch-data && yarn run build && ts-node --require dotenv/config scripts/deploy.ts",
     "fetch-data": "ts-node --require dotenv/config scripts/fetch-data.ts",
     "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-ts'",
     "fix-css": "stylelint --fix 'src/**/*.css'",
