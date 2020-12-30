@@ -26,7 +26,7 @@
     "concurrently": "^5.3.0",
     "cpy-cli": "^3.1.1",
     "dotenv": "^8.2.0",
-    "generate-css": "^0.0.8",
+    "generate-css": "^0.0.9",
     "html-minifier": "^4.0.0",
     "imagemin-cli": "^6.0.0",
     "mkdirp": "^1.0.4",
