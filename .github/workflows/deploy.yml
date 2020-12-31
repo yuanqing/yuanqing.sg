@@ -13,4 +13,14 @@ jobs:
         with:
           node-version: 12
       - run: yarn install --frozen-lockfile
-      - run: yarn run deploy
+      - run: yarn run data
+      - run: yarn run build
+      - uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          SINGLE_COMMIT: true
+          GIT_CONFIG_NAME: github-actions[bot]
+          GIT_CONFIG_EMAIL: github-actions[bot]@users.noreply.github.com
