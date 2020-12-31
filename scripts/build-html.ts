@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra'
 import * as globby from 'globby'
+import { minify } from 'html-minifier'
 import * as path from 'path'
 
 const lodashTemplate = require('lodash.template')
@@ -13,18 +14,17 @@ async function main(): Promise<void> {
   const files = await globby(`${sourceDirectory}/**/*.html`)
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')
-    const result = lodashTemplate(html)(data)
+    const rendered = lodashTemplate(html)(data)
+    const minified = minify(rendered, {
+      collapseWhitespace: true,
+      removeComments: true,
+      removeTagWhitespace: true
+    })
     const outputFilePath = path.join(
       outputDirectory,
       path.relative(sourceDirectory, file)
     )
-    await fs.outputFile(outputFilePath, result)
+    await fs.outputFile(outputFilePath, minified)
   }
-  // const figma = await fetchFigmaStatsAsync('yuanqing')
-  // const github = await fetchGitHubStatsAsync(
-  //   'yuanqing',
-  //   process.env.GITHUB_ACCESS_TOKEN as string
-  // )
-  // await fs.outputFile('data.json', JSON.stringify({ figma, github }, null, 2), 'utf8')
 }
 main()

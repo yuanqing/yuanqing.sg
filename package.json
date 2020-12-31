@@ -1,10 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn run clean && yarn run build-html && yarn run build-css && yarn run build-media && yarn run build-cname",
-    "build-cname": "cp CNAME build/CNAME",
+    "build": "yarn run clean && yarn run build-html && yarn run build-css && yarn run build-media && cp CNAME build/CNAME",
     "build-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --minify",
-    "build-html": "ts-node scripts/build-html.ts && html-minifier --collapse-whitespace --input-dir build --minify-js true --output-dir build --remove-tag-whitespace",
+    "build-html": "ts-node scripts/build-html.ts",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
     "clean": "rimraf '*.log' build",
     "deploy": "yarn run fetch-data && yarn run build && ts-node --require dotenv/config scripts/deploy.ts",
@@ -20,8 +19,8 @@
     "start": "yarn run build && concurrently --raw 'yarn run serve' 'open-cli http://0.0.0.0:4242'",
     "watch": "yarn run clean && concurrently --raw 'yarn run serve' 'yarn run watch-css' 'yarn run watch-html' 'yarn run watch-media'",
     "watch-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --watch",
-    "watch-html": "chokidar 'src/html/**/*.html' --command 'cpy \"src/html/*.html\" build' --initial --silent",
-    "watch-media": "chokidar 'media/**/*' --command 'imagemin \"media/**/*\" --out-dir build/media' --initial --silent"
+    "watch-html": "chokidar 'src/html/**/*.html' --command 'yarn run build-html' --initial --silent",
+    "watch-media": "chokidar 'media/**/*' --command 'yarn run build-media' --initial --silent"
   },
   "devDependencies": {
     "@octokit/rest": "^18.0.12",
