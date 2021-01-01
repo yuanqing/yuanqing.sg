@@ -26,6 +26,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: build
-          SINGLE_COMMIT: true
           GIT_CONFIG_NAME: github-actions[bot]
           GIT_CONFIG_EMAIL: github-actions[bot]@users.noreply.github.com
