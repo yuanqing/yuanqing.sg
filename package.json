@@ -15,10 +15,10 @@
     "lint": "concurrently --raw 'yarn run lint-css' 'yarn run lint-ts'",
     "lint-css": "stylelint 'src/**/*.css'",
     "lint-ts": "eslint 'scripts/**/*.ts'",
+    "open": "open-cli http://0.0.0.0:4242",
     "reset": "yarn run clean && rimraf node_modules yarn.lock && yarn install",
     "serve": "mkdirp build && sirv build --dev --host --port 4242 --quiet",
-    "start": "yarn run build && concurrently --raw 'yarn run serve' 'open-cli http://0.0.0.0:4242'",
-    "watch": "yarn run clean && concurrently --raw 'yarn run serve' 'yarn run watch-css' 'yarn run watch-html' 'yarn run watch-media'",
+    "watch": "yarn run clean-build && concurrently --raw 'yarn run serve' 'yarn run watch-css' 'yarn run watch-html' 'yarn run watch-media'",
     "watch-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --watch",
     "watch-html": "chokidar 'src/html/**/*.html' --command 'yarn run build-html' --initial --silent",
     "watch-media": "chokidar 'media/**/*' --command 'yarn run build-media' --initial --silent"
@@ -72,6 +72,7 @@
       "color": {
         "black": "#000000",
         "gray": "#7f7f7f",
+        "gray-light": "#404040",
         "white": "#ffffff",
         "white-selection": "rgba(255, 255, 255, 0.99)"
       },
