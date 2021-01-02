@@ -72,7 +72,6 @@
       "color": {
         "black": "#000000",
         "gray": "#7f7f7f",
-        "gray-light": "#404040",
         "white": "#ffffff",
         "white-selection": "rgba(255, 255, 255, 0.99)"
       },
