@@ -16,7 +16,7 @@ Then, create a `.env` file containing a [GitHub personal access token](https://d
 $ echo PERSONAL_ACCESS_TOKEN=MY_GITHUB_PERSONAL_ACCESS_TOKEN > .env
 ```
 
-Then, pull the latest GitHub repository and Figma plugins stats:
+Then, pull the latest GitHub repositories and Figma plugins stats:
 
 ```
 $ yarn run data
