@@ -17,6 +17,7 @@ async function main(): Promise<void> {
     const rendered = lodashTemplate(html)(data)
     const minified = minify(rendered, {
       collapseWhitespace: true,
+      minifyJS: true,
       removeComments: true,
       removeTagWhitespace: true
     })
