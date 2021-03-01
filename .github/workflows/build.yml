@@ -19,6 +19,9 @@ jobs:
       - run: yarn run lint
       - run: yarn run fix
       - run: yarn run data
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
       - run: yarn run build
       - uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
