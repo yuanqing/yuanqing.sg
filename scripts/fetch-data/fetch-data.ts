@@ -10,7 +10,7 @@ async function main(): Promise<void> {
   const figma = await fetchFigmaStatsAsync('yuanqing')
   const github = await fetchGitHubStatsAsync(
     'yuanqing',
-    process.env.GITHUB_PERSONAL_ACCESS_TOKEN as string
+    process.env.PERSONAL_ACCESS_TOKEN as string
   )
   const linkedIn = await fetchLinkedInStatsAsync({
     'Meaningful career advice':
