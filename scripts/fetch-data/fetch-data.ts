@@ -4,12 +4,13 @@ import { fetchFigmaStatsAsync } from './utilities/fetch-figma-stats-async'
 import { fetchGitHubStatsAsync } from './utilities/fetch-github-stats-async'
 import { fetchLinkedInStatsAsync } from './utilities/fetch-linkedin-stats-async'
 import { fetchMediumStatsAsync } from './utilities/fetch-medium-stats-async'
+import { fetchTwitterStatsAsync } from './utilities/fetch-twitter-stats-async'
 
 async function main(): Promise<void> {
   const figma = await fetchFigmaStatsAsync('yuanqing')
   const github = await fetchGitHubStatsAsync(
     'yuanqing',
-    process.env.PERSONAL_ACCESS_TOKEN as string
+    process.env.GITHUB_PERSONAL_ACCESS_TOKEN as string
   )
   const linkedIn = await fetchLinkedInStatsAsync({
     'Meaningful career advice':
@@ -21,9 +22,18 @@ async function main(): Promise<void> {
     'The UX of Figma plugins':
       'https://uxdesign.cc/the-ux-of-figma-plugins-f4f896f8cf35?source=friends_link&sk=08a70b856568099811cb30cb24204558'
   })
+  const twitter = await fetchTwitterStatsAsync(
+    {
+      '1249707453278638080': 'figma-plugins-stats',
+      '1290667904736714758': 'hci',
+      '1312018444771119105': 'generate-css',
+      '1340840721088036865': 'single-page-markdown-website'
+    },
+    process.env.TWITTER_BEARER_TOKEN as string
+  )
   await fs.outputFile(
     'data.json',
-    JSON.stringify({ figma, github, linkedIn, medium }, null, 2),
+    JSON.stringify({ figma, github, linkedIn, medium, twitter }, null, 2),
     'utf8'
   )
 }
