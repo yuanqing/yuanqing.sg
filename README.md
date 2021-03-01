@@ -10,13 +10,14 @@ $ cd yuanqing.sg
 $ yarn
 ```
 
-Then, create a `.env` file containing a [GitHub personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token):
+Then, create a `.env` file containing a [GitHub *Personal Access Token*](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) and [Twitter *Bearer Token*](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens):
 
 ```
-$ echo PERSONAL_ACCESS_TOKEN=MY_GITHUB_PERSONAL_ACCESS_TOKEN > .env
+GITHUB_PERSONAL_ACCESS_TOKEN=FOO
+TWITTER_BEARER_TOKEN=BAR
 ```
 
-Then, pull the latest GitHub repositories and Figma plugins stats:
+Then, pull the latest stats for Figma, GitHub, LinkedIn, Medium and Twitter:
 
 ```
 $ yarn run data
