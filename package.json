@@ -72,9 +72,9 @@
         "md": "880px"
       },
       "color": {
-        "black": "#000000",
-        "gray": "#7f7f7f",
-        "white": "#ffffff",
+        "black": "#000",
+        "gray": "#999",
+        "white": "#fff",
         "white-selection": "rgba(255, 255, 255, 0.99)"
       },
       "fontFamily": {
@@ -83,8 +83,8 @@
       "fontSize": {
         "sm": "0.8125rem",
         "md": "0.9375rem",
-        "lg": "1.25rem",
-        "xl": "2rem"
+        "lg": "1.2rem",
+        "xl": "1.75rem"
       },
       "fontWeight": {
         "regular": "400",
