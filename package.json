@@ -61,7 +61,8 @@
       "baseFontSize": {
         "default": "16px",
         "sm": "18px",
-        "md": "20px"
+        "md": "20px",
+        "lg": "22px"
       },
       "baseSpace": "0.25rem",
       "borderRadius": {
@@ -69,7 +70,8 @@
       },
       "breakpoint": {
         "sm": "540px",
-        "md": "880px"
+        "md": "880px",
+        "lg": "1400px"
       },
       "color": {
         "black": "#000",
@@ -83,7 +85,7 @@
       "fontSize": {
         "sm": "0.8125rem",
         "md": "0.9375rem",
-        "lg": "1.2rem",
+        "lg": "1.25rem",
         "xl": "1.75rem"
       },
       "fontWeight": {
@@ -95,14 +97,15 @@
         "xl": "-0.03rem"
       },
       "lineHeight": {
-        "sm": "1.25rem",
-        "md": "1.5rem",
+        "sm": "1.4rem",
+        "md": "1.6rem",
         "lg": "1.75rem",
         "xl": "2rem"
       },
       "maxWidth": {
         "sm": "640px",
-        "md": "720px"
+        "md": "720px",
+        "lg": "840px"
       }
     }
   },
