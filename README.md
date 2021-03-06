@@ -10,7 +10,7 @@ $ cd yuanqing.sg
 $ yarn
 ```
 
-Then, create a `.env` file containing a [GitHub *Personal Access Token*](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) and [Twitter *Bearer Token*](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens):
+Then, create a `.env` file containing a [GitHub **Personal Access Token**](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) and [Twitter **Bearer Token**](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens):
 
 ```
 PERSONAL_ACCESS_TOKEN=FOO
