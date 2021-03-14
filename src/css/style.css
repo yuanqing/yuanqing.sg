@@ -59,6 +59,10 @@ html {
   font-size: 16px;
 }
 
+.select-none {
+  user-select: none;
+}
+
 .font {
   font-family: system-ui, ui-sans-serif, sans-serif;
 }
@@ -137,15 +141,14 @@ html {
 .color-white {
   color: var(--color-white);
 }
-.selection\:color-black::selection {
+.selection\:color-black ::selection {
   color: var(--color-black);
 }
 
 .bg-black {
   background-color: var(--color-black);
 }
-
-.selection\:bg-white-selection::selection {
+.selection\:bg-white-selection ::selection {
   background-color: rgba(255, 255, 255, 0.99);
 }
 
