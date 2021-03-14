@@ -19,6 +19,8 @@ async function main(): Promise<void> {
   const medium = await fetchMediumStatsAsync({
     'Applying white space in UI design':
       'https://uxdesign.cc/whitespace-in-ui-design-44e332c8e4a?source=friends_link&sk=94e5f3b7d86965cda665f93432582fa6',
+    'The Figma plugins that make me a better designer':
+      'https://ux.shopify.com/the-figma-plugins-that-make-me-a-better-designer-28eb844b0506?source=friends_link&sk=e6c996958f7b9300194ca8f16e76215e',
     'The UX of Figma plugins':
       'https://uxdesign.cc/the-ux-of-figma-plugins-f4f896f8cf35?source=friends_link&sk=08a70b856568099811cb30cb24204558'
   })

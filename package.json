@@ -2,15 +2,16 @@
   "private": true,
   "scripts": {
     "build": "yarn run clean-build && yarn run build-html && yarn run build-css && yarn run build-media && cpy CNAME build",
-    "build-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --minify",
+    "build-css": "postcss src/css/style.css --dir build --no-map --use cssnano",
     "build-html": "ts-node scripts/build-html.ts",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
     "clean": "rimraf '*.log' && yarn run clean-build && yarn run clean-data",
     "clean-build": "rimraf build",
     "clean-data": "rimraf data.json",
     "data": "yarn run clean-data && ts-node --require dotenv/config scripts/fetch-data/fetch-data.ts",
-    "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-ts'",
+    "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-html' 'yarn run fix-ts'",
     "fix-css": "stylelint --fix 'src/**/*.css'",
+    "fix-html": "prettier 'src/**/*.html' --print-width 9999 --write",
     "fix-ts": "eslint --fix 'scripts/**/*.ts'",
     "lint": "concurrently --raw 'yarn run lint-css' 'yarn run lint-ts'",
     "lint-css": "stylelint 'src/**/*.css'",
@@ -19,95 +20,43 @@
     "reset": "yarn run clean && rimraf node_modules yarn.lock && yarn install",
     "serve": "mkdirp build && sirv build --dev --host --port 4242 --quiet",
     "watch": "yarn run clean-build && concurrently --raw 'yarn run serve' 'yarn run watch-css' 'yarn run watch-html' 'yarn run watch-media'",
-    "watch-css": "generate-css 'src/html/*.html' --prepend src/css/prepend.css --append src/css/append.css --output build/style.css --watch",
+    "watch-css": "chokidar 'src/css/**/*.css' --command 'yarn run build-css' --initial --silent",
     "watch-html": "chokidar 'src/html/**/*.html' --command 'yarn run build-html' --initial --silent",
     "watch-media": "chokidar 'media/**/*' --command 'yarn run build-media' --initial --silent"
   },
   "devDependencies": {
-    "@octokit/rest": "^18.3.0",
+    "@octokit/rest": "^18.3.5",
     "@types/fs-extra": "^9.0.8",
-    "@types/jsdom": "^16.2.6",
-    "@types/node": "^14.14.31",
+    "@types/jsdom": "^16.2.7",
+    "@types/node": "^14.14.34",
     "chokidar-cli": "^2.1.0",
     "concurrently": "^6.0.0",
     "cpy-cli": "^3.1.1",
+    "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
-    "eslint": "^7.21.0",
+    "eslint": "^7.22.0",
     "eslint-config-yuanqing": "^0.0.4",
     "fs-extra": "^9.1.0",
-    "generate-css": "^0.0.10",
     "globby": "^11.0.2",
     "html-minifier": "^4.0.0",
-    "husky": "^5.1.2",
+    "husky": "^5.1.3",
     "imagemin-cli": "^6.0.0",
     "isomorphic-unfetch": "^3.1.0",
-    "jsdom": "^16.4.0",
+    "jsdom": "^16.5.1",
     "lint-staged": "^10.5.4",
     "lodash.template": "^4.5.0",
     "mkdirp": "^1.0.4",
     "open-cli": "^6.0.1",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "sirv-cli": "^1.0.11",
     "standard": "^16.0.3",
-    "stylelint": "^13.11.0",
+    "stylelint": "^13.12.0",
     "stylelint-config-yuanqing": "^0.0.1",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.2"
-  },
-  "generate-css": {
-    "reset": false,
-    "theme": {
-      "baseFontSize": {
-        "default": "16px",
-        "sm": "18px",
-        "md": "20px",
-        "lg": "22px"
-      },
-      "baseSpace": "0.25rem",
-      "borderRadius": {
-        "default": "4px"
-      },
-      "breakpoint": {
-        "sm": "540px",
-        "md": "880px",
-        "lg": "1400px"
-      },
-      "color": {
-        "black": "#000",
-        "gray": "#aaa",
-        "white": "#fff",
-        "white-selection": "rgba(255, 255, 255, 0.99)"
-      },
-      "fontFamily": {
-        "default": "'Inter', 'Helvetica', sans-serif"
-      },
-      "fontSize": {
-        "sm": "0.8125rem",
-        "md": "0.9375rem",
-        "lg": "1.25rem",
-        "xl": "1.75rem"
-      },
-      "fontWeight": {
-        "regular": "400",
-        "bold": "700"
-      },
-      "letterSpacing": {
-        "lg": "-0.03rem",
-        "xl": "-0.03rem"
-      },
-      "lineHeight": {
-        "sm": "1.4rem",
-        "md": "1.6rem",
-        "lg": "1.75rem",
-        "xl": "2rem"
-      },
-      "maxWidth": {
-        "sm": "640px",
-        "md": "720px",
-        "lg": "840px"
-      }
-    }
+    "typescript": "^4.2.3"
   },
   "eslintConfig": {
     "extends": "yuanqing"
