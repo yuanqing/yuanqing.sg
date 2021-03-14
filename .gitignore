@@ -2,5 +2,5 @@
 .env
 *.log
 build/
-data.json
+stats.json
 node_modules/
