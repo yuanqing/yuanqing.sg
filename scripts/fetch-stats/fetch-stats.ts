@@ -1,5 +1,3 @@
-import * as fs from 'fs-extra'
-
 import { fetchFigmaStatsAsync } from './utilities/fetch-figma-stats-async'
 import { fetchGitHubStatsAsync } from './utilities/fetch-github-stats-async'
 import { fetchMediumStatsAsync } from './utilities/fetch-medium-stats-async'
@@ -28,10 +26,6 @@ async function main(): Promise<void> {
     },
     process.env.TWITTER_BEARER_TOKEN as string
   )
-  await fs.outputFile(
-    'data.json',
-    JSON.stringify({ figma, github, medium, twitter }, null, 2),
-    'utf8'
-  )
+  console.log(JSON.stringify({ figma, github, medium, twitter }, null, 2))
 }
 main()
