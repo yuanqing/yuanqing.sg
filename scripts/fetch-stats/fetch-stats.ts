@@ -26,6 +26,6 @@ async function main(): Promise<void> {
     },
     process.env.TWITTER_BEARER_TOKEN as string
   )
-  console.log(JSON.stringify({ figma, github, medium, twitter }, null, 2))
+  console.log(JSON.stringify({ figma, github, medium, twitter }, null, 2)) // eslint-disable-line no-console
 }
 main()
