@@ -20,7 +20,7 @@ TWITTER_BEARER_TOKEN=BAR
 Then, pull the latest stats for Figma, GitHub, LinkedIn, Medium and Twitter:
 
 ```
-$ yarn run data
+$ yarn run stats
 ```
 
 ## Development
