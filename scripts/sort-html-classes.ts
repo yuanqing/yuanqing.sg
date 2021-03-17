@@ -3,6 +3,7 @@ import * as globby from 'globby'
 import * as path from 'path'
 
 const sourceDirectory = path.join(__dirname, '..', 'src', 'html')
+const prefixes = ['md', 'lg', 'xl', 'selection']
 
 async function main(): Promise<void> {
   const files = await globby(`${sourceDirectory}/**/*.html`)
@@ -43,7 +44,7 @@ function sortClasses(x: string, y: string) {
           stripDashPrefix(yy.className)
         )
       }
-      return xx.prefix.localeCompare(yy.prefix)
+      return prefixes.indexOf(xx.prefix) - prefixes.indexOf(yy.prefix)
     }
     return 1
   }
@@ -57,10 +58,9 @@ function isComponent(className: string) {
   return /[A-Z]/.test(className) === true
 }
 
-const prefixes = ['md:', 'lg:', 'xl:', 'selection:']
 function hasPrefix(className: string) {
   for (const prefix of prefixes) {
-    if (className.indexOf(prefix) === 0) {
+    if (className.indexOf(`${prefix}:`) === 0) {
       return true
     }
   }
