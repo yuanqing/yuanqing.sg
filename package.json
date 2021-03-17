@@ -10,7 +10,7 @@
     "clean-stats": "rimraf stats.json",
     "fix": "concurrently --raw 'yarn run fix-css' 'yarn run fix-html' 'yarn run fix-ts'",
     "fix-css": "stylelint --fix 'src/**/*.css'",
-    "fix-html": "prettier 'src/**/*.html' --loglevel error --print-width 9999 --write",
+    "fix-html": "ts-node scripts/sort-html-classes.ts && prettier 'src/**/*.html' --loglevel error --print-width 9999 --write",
     "fix-ts": "eslint --fix 'scripts/**/*.ts'",
     "lint": "concurrently --raw 'yarn run lint-css' 'yarn run lint-ts'",
     "lint-css": "ts-node scripts/check-unused-css.ts 'src/**/*.html' 'src/**/*.css' && stylelint 'src/**/*.css'",

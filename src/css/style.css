@@ -63,11 +63,11 @@ html {
   user-select: none;
 }
 
-.font {
-  font-family: -apple-system, system-ui, ui-sans-serif, 'Helvetica Neue',
-    Helvetica, Arial, sans-serif;
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', Arial,
+    sans-serif;
 }
-.bold {
+.font-bold {
   font-weight: bold;
 }
 
@@ -79,7 +79,7 @@ html {
   font-size: 1rem;
   line-height: 1.375rem;
 }
-.text-md {
+.text-base {
   font-size: 1.25rem;
   line-height: 1.625rem;
 }
@@ -118,23 +118,23 @@ html {
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
-.grid-gap-col-3 {
+.gap-x-3 {
   column-gap: var(--size-3);
 }
-.grid-span-col-2 {
+.col-span-2 {
   grid-column: span 2 / span 2;
 }
-.-grid-order-1 {
-  order: -1;
+.order-first {
+  order: -9999;
 }
 
 .flex-grow {
   flex-grow: 1;
 }
-.align-self-center {
+.self-center {
   align-self: center;
 }
-.align-self-end {
+.self-end {
   align-self: end;
 }
 
@@ -161,7 +161,7 @@ html {
 .bg-black {
   background-color: var(--color-black);
 }
-.selection\:bg-white-selection ::selection {
+.selection\:bg-white ::selection {
   background-color: rgba(255, 255, 255, 0.99);
 }
 
@@ -177,11 +177,11 @@ html {
   margin: auto;
 }
 
-.bt-1\/2 {
+.border-t-1\/2 {
   border-top-color: var(--color-white);
   border-top-width: calc(var(--size-1) / 2);
 }
-.bt-1px {
+.border-t-1 {
   border-top-color: var(--color-gray-1);
   border-top-width: 1px;
 }
@@ -223,7 +223,7 @@ html {
   padding-bottom: var(--size-4);
 }
 
-.nested-link::before {
+.NestedLink::before {
   position: absolute;
   top: -1px;
   right: 0;
@@ -265,23 +265,23 @@ html {
   .lg\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
-  .lg\:grid-gap-col-3 {
+  .lg\:gap-x-3 {
     column-gap: var(--size-3);
   }
-  .lg\:grid-span-col-auto {
+  .lg\:col-auto {
     grid-column: auto;
   }
-  .lg\:grid-order-1 {
+  .lg\:order-1 {
     order: 1;
   }
-  .lg\:grid-order-2 {
+  .lg\:order-2 {
     order: 2;
   }
 
-  .lg\:align-self-end {
+  .lg\:self-end {
     align-self: end;
   }
-  .lg\:align-self-auto {
+  .lg\:self-auto {
     align-self: auto;
   }
 
@@ -308,11 +308,11 @@ html {
     padding-bottom: var(--size-3);
   }
 
-  .lg\:bt-1\/2 {
+  .lg\:border-t-1\/2 {
     border-top-color: var(--color-white);
     border-top-width: calc(var(--size-1) / 2);
   }
-  .lg\:bt-0 {
+  .lg\:border-t-0 {
     border-top-width: 0;
   }
 }
@@ -328,7 +328,7 @@ html {
 }
 
 @media (hover: hover) {
-  .u {
+  .Underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-repeat: no-repeat;
     background-position: 0% 100%;
@@ -336,8 +336,8 @@ html {
     transition: background-size 0.2s ease;
   }
 
-  a:hover .u,
-  a:focus .u {
+  a:hover .Underline,
+  a:focus .Underline {
     background-size: 100% 1px;
   }
 }
