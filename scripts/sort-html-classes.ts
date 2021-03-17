@@ -8,9 +8,16 @@ async function main(): Promise<void> {
   const files = await globby(`${sourceDirectory}/**/*.html`)
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')
-    const result = html.replace(/class="([^\"]+)"/g, function (_: string, classes: string) {
-      return `class="${classes.split(/ +/).sort(sortClasses).join(' ').trim()}"`
-    })
+    const result = html.replace(
+      /class="([^\"]+)"/g,
+      function (_: string, classes: string) {
+        return `class="${classes
+          .split(/ +/)
+          .sort(sortClasses)
+          .join(' ')
+          .trim()}"`
+      }
+    )
     await fs.outputFile(file, result)
   }
 }
@@ -31,7 +38,10 @@ function sortClasses(x: string, y: string) {
       const xx = parsePrefixedClassName(x)
       const yy = parsePrefixedClassName(y)
       if (xx.prefix === yy.prefix) {
-        return sortClasses(stripDashPrefix(xx.className), stripDashPrefix(yy.className))
+        return sortClasses(
+          stripDashPrefix(xx.className),
+          stripDashPrefix(yy.className)
+        )
       }
       return xx.prefix.localeCompare(yy.prefix)
     }
@@ -43,17 +53,12 @@ function sortClasses(x: string, y: string) {
   return stripDashPrefix(x).localeCompare(stripDashPrefix(y))
 }
 
-function isComponent (className: string) {
+function isComponent(className: string) {
   return /[A-Z]/.test(className) === true
 }
 
-const prefixes = [
-  'md:',
-  'lg:',
-  'xl:',
-  'selection:'
-]
-function hasPrefix (className: string) {
+const prefixes = ['md:', 'lg:', 'xl:', 'selection:']
+function hasPrefix(className: string) {
   for (const prefix of prefixes) {
     if (className.indexOf(prefix) === 0) {
       return true
@@ -62,18 +67,18 @@ function hasPrefix (className: string) {
   return false
 }
 
-function parsePrefixedClassName (className: string) {
+function parsePrefixedClassName(className: string) {
   const index = className.indexOf(':')
   if (index === -1) {
     throw new Error()
   }
   return {
-    prefix: className.substring(0, index),
-    className: className.substring(index + 1)
+    className: className.substring(index + 1),
+    prefix: className.substring(0, index)
   }
 }
 
-function stripDashPrefix (className: string) {
+function stripDashPrefix(className: string) {
   if (className[0] === '-') {
     return className.substring(1)
   }
