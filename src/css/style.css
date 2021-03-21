@@ -344,6 +344,6 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark
+    color-scheme: dark;
   }
 }
