@@ -3,6 +3,7 @@
   --color-gray-1: #333;
   --color-gray-2: #bbb;
   --color-white: #fff;
+  --color-yellow: #ffeb00;
   --size-1: 0.5rem;
   --size-2: 1rem;
   --size-3: 1.5rem;
@@ -157,15 +158,15 @@ html {
 .selection\:color-black ::selection {
   color: var(--color-black);
 }
-.selection\:color-white ::selection {
-  color: var(--color-white);
+.selection\:color-yellow ::selection {
+  color: var(--color-yellow);
 }
 
 .bg-black {
   background-color: var(--color-black);
 }
-.bg-white {
-  background-color: var(--color-white);
+.bg-yellow {
+  background-color: var(--color-yellow);
 }
 .selection\:bg-black ::selection {
   background-color: rgba(0, 0, 0, 0.99);
