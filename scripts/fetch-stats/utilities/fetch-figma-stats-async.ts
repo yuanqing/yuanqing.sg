@@ -5,6 +5,7 @@ import { formatNumber } from './format-number'
 export async function fetchFigmaStatsAsync(
   username: string
 ): Promise<{ [key: string]: string }> {
+  console.log('Figma') // eslint-disable-line no-console
   const response = await fetch(
     'https://yuanqing.github.io/figma-plugins-stats/index.json'
   )

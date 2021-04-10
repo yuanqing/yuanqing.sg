@@ -9,14 +9,16 @@ export async function fetchLinkedInStatsAsync(urls: {
 }): Promise<{ [key: string]: string }> {
   const result: { [key: string]: string } = {}
   for (const id in urls) {
-    result[id] = await fetchLinkedInPostResponseCountAsync(urls[id])
+    result[id] = await fetchLinkedInPostResponseCountAsync(id, urls[id])
   }
   return result
 }
 
 async function fetchLinkedInPostResponseCountAsync(
+  id: string,
   url: string
 ): Promise<string> {
+  console.log(`LinkedIn: ${id}`) // eslint-disable-line no-console
   const response = await fetch(url)
   const html = await response.text()
   const document = new JSDOM(html).window.document

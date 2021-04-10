@@ -8,6 +8,7 @@ export async function fetchTwitterStatsAsync(
 ): Promise<{
   [key: string]: { likes: number; retweets: number; replies: number }
 }> {
+  console.log('Twitter') // eslint-disable-line no-console
   const response = await fetch(
     `https://api.twitter.com/2/tweets?ids=${Object.keys(tweetIds).join(
       ','

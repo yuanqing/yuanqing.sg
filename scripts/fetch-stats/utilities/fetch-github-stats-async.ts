@@ -6,6 +6,7 @@ export async function fetchGitHubStatsAsync(
   username: string,
   accessToken: string
 ): Promise<{ [key: string]: string }> {
+  console.log('GitHub') // eslint-disable-line no-console
   const octokit = new Octokit({
     auth: accessToken,
     userAgent: username
