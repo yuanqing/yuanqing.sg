@@ -6,11 +6,12 @@ import * as path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const statsFile = path.join(__dirname, '..', 'stats.json')
 const sourceDirectory = path.join(__dirname, '..', 'src', 'html')
 const outputDirectory = path.join(__dirname, '..', 'build')
 
 async function main(): Promise<void> {
-  const stats = await fs.readJson('../stats.json')
+  const stats = JSON.parse(await fs.readFile(statsFile, 'utf8'))
   const files = await globby(`${sourceDirectory}/**/*.html`)
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')
