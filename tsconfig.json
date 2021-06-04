@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "removeComments": true,
+    "strict": true,
+    "target": "ES2020",
+    "types": ["@types/node"]
+  },
+  "include": ["scripts/**/*.ts"]
+}

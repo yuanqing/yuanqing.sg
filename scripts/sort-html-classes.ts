@@ -1,7 +1,9 @@
-import * as fs from 'fs-extra'
-import * as globby from 'globby'
+import fs from 'fs-extra'
+import globby from 'globby'
 import * as path from 'path'
+import { fileURLToPath } from 'url'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const sourceDirectory = path.join(__dirname, '..', 'src', 'html')
 const prefixes = ['md', 'lg', 'xl', 'selection']
 
@@ -24,7 +26,7 @@ async function main(): Promise<void> {
 }
 main()
 
-function sortClasses(x: string, y: string) {
+function sortClasses(x: string, y: string): number {
   if (isComponent(x) === true) {
     if (isComponent(y) === true) {
       return x.localeCompare(y)
@@ -54,11 +56,11 @@ function sortClasses(x: string, y: string) {
   return stripDashPrefix(x).localeCompare(stripDashPrefix(y))
 }
 
-function isComponent(className: string) {
+function isComponent(className: string): boolean {
   return /[A-Z]/.test(className) === true
 }
 
-function hasPrefix(className: string) {
+function hasPrefix(className: string): boolean {
   for (const prefix of prefixes) {
     if (className.indexOf(`${prefix}:`) === 0) {
       return true
@@ -67,7 +69,10 @@ function hasPrefix(className: string) {
   return false
 }
 
-function parsePrefixedClassName(className: string) {
+function parsePrefixedClassName(className: string): {
+  className: string
+  prefix: string
+} {
   const index = className.indexOf(':')
   if (index === -1) {
     throw new Error()

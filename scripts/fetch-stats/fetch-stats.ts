@@ -1,10 +1,10 @@
 import { outputFile } from 'fs-extra'
-import * as pProps from 'p-props'
+import pProps from 'p-props'
 
-import { fetchFigmaStatsAsync } from './utilities/fetch-figma-stats-async'
-import { fetchGitHubStatsAsync } from './utilities/fetch-github-stats-async'
-import { fetchMediumStatsAsync } from './utilities/fetch-medium-stats-async'
-import { fetchTwitterStatsAsync } from './utilities/fetch-twitter-stats-async'
+import { fetchFigmaStatsAsync } from './utilities/fetch-figma-stats-async.js'
+import { fetchGitHubStatsAsync } from './utilities/fetch-github-stats-async.js'
+import { fetchMediumStatsAsync } from './utilities/fetch-medium-stats-async.js'
+import { fetchTwitterStatsAsync } from './utilities/fetch-twitter-stats-async.js'
 
 async function main(): Promise<void> {
   const promises = {

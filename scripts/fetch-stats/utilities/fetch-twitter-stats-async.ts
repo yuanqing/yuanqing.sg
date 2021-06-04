@@ -1,13 +1,11 @@
-const fetch = require('isomorphic-unfetch')
+import fetch from 'isomorphic-unfetch'
 
 export async function fetchTwitterStatsAsync(
-  tweetIds: {
-    [key: string]: string
-  },
+  tweetIds: Record<string, string>,
   bearerToken: string
-): Promise<{
-  [key: string]: { likes: number; retweets: number; replies: number }
-}> {
+): Promise<
+  Record<string, { likes: number; retweets: number; replies: number }>
+> {
   console.log('Twitter') // eslint-disable-line no-console
   const response = await fetch(
     `https://api.twitter.com/2/tweets?ids=${Object.keys(tweetIds).join(
@@ -20,7 +18,10 @@ export async function fetchTwitterStatsAsync(
     }
   )
   const json = await response.json()
-  const result = {}
+  const result: Record<
+    string,
+    { likes: number; retweets: number; replies: number }
+  > = {}
   for (const tweet of json.data) {
     const stats = tweet.public_metrics
     result[tweetIds[tweet.id]] = {

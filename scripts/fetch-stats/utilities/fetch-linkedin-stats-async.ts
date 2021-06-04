@@ -1,13 +1,13 @@
 import { JSDOM } from 'jsdom'
 
-import { formatNumber } from './format-number'
+import { formatNumber } from './format-number.js'
 
 const fetch = require('isomorphic-unfetch')
 
-export async function fetchLinkedInStatsAsync(urls: {
-  [key: string]: string
-}): Promise<{ [key: string]: string }> {
-  const result: { [key: string]: string } = {}
+export async function fetchLinkedInStatsAsync(
+  urls: Record<string, string>
+): Promise<Record<string, string>> {
+  const result: Record<string, string> = {}
   for (const id in urls) {
     result[id] = await fetchLinkedInPostResponseCountAsync(id, urls[id])
   }

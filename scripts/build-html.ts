@@ -1,16 +1,16 @@
-import * as fs from 'fs-extra'
-import * as globby from 'globby'
+import fs from 'fs-extra'
+import globby from 'globby'
 import { minify } from 'html-minifier'
+import lodashTemplate from 'lodash.template'
 import * as path from 'path'
+import { fileURLToPath } from 'url'
 
-const lodashTemplate = require('lodash.template')
-
-const stats = require('../stats.json')
-
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const sourceDirectory = path.join(__dirname, '..', 'src', 'html')
 const outputDirectory = path.join(__dirname, '..', 'build')
 
 async function main(): Promise<void> {
+  const stats = await fs.readJson('../stats.json')
   const files = await globby(`${sourceDirectory}/**/*.html`)
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')

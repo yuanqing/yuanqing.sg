@@ -7,7 +7,7 @@ function main(): void {
   }
   const html = [args[0]]
   const css = [args[1]]
-  const output = []
+  const output: Array<string> = []
   // eslint-disable-next-line no-console
   console.log = function (...args: Array<any>) {
     output.push(args.join(' '))
