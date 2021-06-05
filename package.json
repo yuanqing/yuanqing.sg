@@ -4,7 +4,7 @@
   "scripts": {
     "build": "yarn run clean-build && yarn run build-html && yarn run build-css && yarn run build-media && cpy CNAME build",
     "build-css": "postcss src/css/style.css --dir build --no-map --use cssnano",
-    "build-html": "TS_NODE_PROJECT=tsconfig.json node --loader ts-node/esm scripts/build-html.ts",
+    "build-html": "node --loader ts-node/esm scripts/build-html.ts",
     "build-media": "imagemin 'media/**/*' --out-dir build/media",
     "clean": "rimraf '*.log' && yarn run clean-build && yarn run clean-stats",
     "clean-build": "rimraf build",
