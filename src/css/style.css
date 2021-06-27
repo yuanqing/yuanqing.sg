@@ -3,7 +3,6 @@
   --color-gray-1: #333;
   --color-gray-2: #bbb;
   --color-white: #fff;
-  --color-yellow: #ffeb00;
   --size-1: 0.5rem;
   --size-2: 1rem;
   --size-3: 1.5rem;
@@ -77,16 +76,16 @@ html {
   line-height: 1rem;
 }
 .text-sm {
-  font-size: 0.8125rem;
-  line-height: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.2rem;
 }
 .text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
 }
 .text-lg {
-  font-size: 2.25rem;
-  line-height: 2.25rem;
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
 .text-center {
@@ -142,9 +141,6 @@ html {
 .relative {
   position: relative;
 }
-.-top-1\/4 {
-  top: calc(var(--size-1) / 4 * -1);
-}
 
 .color-black {
   color: var(--color-black);
@@ -164,9 +160,6 @@ html {
 
 .bg-black {
   background-color: var(--color-black);
-}
-.bg-yellow {
-  background-color: var(--color-yellow);
 }
 .selection\:bg-black ::selection {
   background-color: rgba(0, 0, 0, 0.99);
@@ -255,6 +248,11 @@ html {
     font-size: 18px;
   }
 
+  .text-lg {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+  }
+
   .md\:max-width {
     max-width: 600px;
   }
@@ -283,10 +281,14 @@ html {
   }
 
   .text-sm {
-    line-height: 1.4rem;
+    line-height: 1.5rem;
   }
   .text-base {
-    line-height: 1.5rem;
+    line-height: 1.6rem;
+  }
+  .text-lg {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
   }
 
   .lg\:max-width {
@@ -360,13 +362,6 @@ html {
 @media (min-width: 1400px) {
   html {
     font-size: 24px;
-  }
-
-  .text-sm {
-    line-height: 1.2rem;
-  }
-  .text-base {
-    line-height: 1.4rem;
   }
 
   .xl\:max-width {
