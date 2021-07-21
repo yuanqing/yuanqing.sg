@@ -28,5 +28,5 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          git-config-name	: github-actions[bot]
+          git-config-name: github-actions[bot]
           git-config-email: github-actions[bot]@users.noreply.github.com
