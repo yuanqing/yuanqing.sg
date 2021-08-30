@@ -1,30 +1,32 @@
 import fs from 'fs-extra'
-import globby from 'globby'
+import { globby } from 'globby'
 import { minify } from 'html-minifier'
 import lodashTemplate from 'lodash.template'
-import * as path from 'path'
+import { dirname, join, relative } from 'path'
 import { fileURLToPath } from 'url'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const statsFile = path.join(__dirname, '..', 'stats.json')
-const sourceDirectory = path.join(__dirname, '..', 'src', 'html')
-const outputDirectory = path.join(__dirname, '..', 'build')
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataFile = join(__dirname, '..', 'data.json')
+const sourceDirectory = join(__dirname, '..', 'src', 'html')
+const outputDirectory = join(__dirname, '..', 'build')
 
 async function main(): Promise<void> {
-  const stats = JSON.parse(await fs.readFile(statsFile, 'utf8'))
+  const data = (await fs.pathExists(dataFile))
+    ? JSON.parse(await fs.readFile(dataFile, 'utf8'))
+    : {}
   const files = await globby(`${sourceDirectory}/**/*.html`)
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')
-    const rendered = lodashTemplate(html)(stats)
+    const rendered = lodashTemplate(html)(data)
     const minified = minify(rendered, {
       collapseWhitespace: true,
       minifyJS: true,
       removeComments: true,
       removeTagWhitespace: true
     })
-    const outputFilePath = path.join(
+    const outputFilePath = join(
       outputDirectory,
-      path.relative(sourceDirectory, file)
+      relative(sourceDirectory, file)
     )
     await fs.outputFile(outputFilePath, minified)
   }

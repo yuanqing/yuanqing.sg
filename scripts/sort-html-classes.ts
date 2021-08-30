@@ -1,10 +1,10 @@
 import fs from 'fs-extra'
-import globby from 'globby'
-import * as path from 'path'
+import { globby } from 'globby'
+import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const sourceDirectory = path.join(__dirname, '..', 'src', 'html')
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const sourceDirectory = join(__dirname, '..', 'src', 'html')
 const prefixes = ['md', 'lg', 'xl', 'selection']
 
 async function main(): Promise<void> {

@@ -1,10 +1,13 @@
-import { outputFile } from 'fs-extra'
+import fs from 'fs-extra'
 import pProps from 'p-props'
+import { join } from 'path'
 
 import { fetchFigmaStatsAsync } from './utilities/fetch-figma-stats-async.js'
 import { fetchGitHubStatsAsync } from './utilities/fetch-github-stats-async.js'
 import { fetchMediumStatsAsync } from './utilities/fetch-medium-stats-async.js'
 import { fetchTwitterStatsAsync } from './utilities/fetch-twitter-stats-async.js'
+
+const dataFile = join(__dirname, '..', '..', 'data.json')
 
 async function main(): Promise<void> {
   const promises = {
@@ -32,6 +35,6 @@ async function main(): Promise<void> {
     )
   }
   const result = await pProps(promises)
-  outputFile('./stats.json', JSON.stringify(result, null, 2))
+  fs.outputFile(dataFile, JSON.stringify(result, null, 2))
 }
 main()
