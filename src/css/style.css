@@ -90,8 +90,8 @@ html {
   display: inline;
 }
 
-.h-screen {
-  height: 100vh;
+.h-full {
+  height: 100%;
 }
 
 .flex {
