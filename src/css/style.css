@@ -18,9 +18,9 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  border-color: currentColor;
-  border-style: solid;
   border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
 }
 
 html {
@@ -340,8 +340,8 @@ html {
 @media (hover: hover) {
   .Underline {
     background-image: linear-gradient(currentColor, currentColor);
-    background-repeat: no-repeat;
     background-position: 0% 100%;
+    background-repeat: no-repeat;
     background-size: 0% 1px;
     transition: background-size 0.2s ease;
   }
