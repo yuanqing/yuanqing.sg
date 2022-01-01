@@ -1,14 +1,12 @@
 import fs from 'fs-extra'
 import { globby } from 'globby'
-import { dirname, join } from 'path'
-import { fileURLToPath } from 'url'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const sourceDirectory = join(__dirname, '..', 'src', 'html')
 const prefixes = ['md', 'lg', 'xl', 'selection']
 
 async function main(): Promise<void> {
-  const files = await globby(`${sourceDirectory}/**/*.html`)
+  const args = process.argv.slice(2)
+  const globPattern = args[0]
+  const files = await globby(globPattern)
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')
     const result = html.replace(

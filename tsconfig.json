@@ -6,7 +6,6 @@
     "paths": {
       "html-minifier": ["./scripts/untyped-dependencies.d.ts"],
       "isomorphic-unfetch": ["./scripts/untyped-dependencies.d.ts"],
-      "lodash.template": ["./scripts/untyped-dependencies.d.ts"],
       "purify-css": ["./scripts/untyped-dependencies.d.ts"]
     },
     "removeComments": true,

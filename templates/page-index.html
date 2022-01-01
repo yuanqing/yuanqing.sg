@@ -1,0 +1,133 @@
+<% const metaShareImage = `https://yuanqing.sg${media['share']}` %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= include('meta') %>
+    <meta name="author" content="<%- author %>" />
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="description" content="<%- description %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="<%- description %>" />
+    <meta name="twitter:image" content="<%- metaShareImage %>" />
+    <meta name="twitter:title" content="<%- title %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:description" content="<%- description %>" />
+    <meta property="og:image" content="<%- metaShareImage %>" />
+    <meta property="og:title" content="<%- title %>" />
+    <meta property="og:url" content="<%- url %>" />
+  </head>
+  <body class="bg-black color-white font-sans text-base selection:bg-white selection:color-black">
+    <div class="Container m-auto px-2 md:px-0">
+      <header>
+        <div class="pt-8 md:gap-x-8 md:grid md:grid-cols-2 md:grid-rows-1 md:pt-10 lg:pt-12">
+          <div>
+            <h1 class="color-gray-2"><%- title %></h1>
+            <p class="pt-3 text-lg lg:pr-4"><%- description %></p>
+          </div>
+          <div class="pt-4 md:py-0">
+            <div class="HeroImage bg-center bg-cover" style="background-image: url(/media/yuanqing.jpg)"></div>
+          </div>
+        </div>
+      </header>
+      <main class="md:gap-x-8 md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
+        <div class="md:col-start-2 md:row-start-1 lg:col-start-4">
+          <div class="color-gray-2 grid grid-cols-2 pt-2 text-sm md:block md:pt-7">
+            <article>
+              <ul class="py-1">
+                <% for (const { name, url } of links) { %>
+                <li>
+                  <a class="block" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
+                </li>
+                <% } %>
+              </ul>
+            </article>
+            <article>
+              <p>
+                <a class="block py-1" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="md:col-start-2 md:row-start-2 lg:col-start-3 lg:row-start-1">
+          <article>
+            <h2 class="color-gray-2 pb-1 pt-6 lg:pt-8">Writing</h2>
+            <ul>
+              <% for (const { date, title, url } of writing) { %>
+              <li>
+                <a class="block py-1" href="<%- url %>" target="_blank">
+                  <div class="Underline inline mr-1"><%- title %></div>
+                  <div class="color-gray-1 inline text-sm"><%- date %></div>
+                </a>
+              </li>
+              <% } %>
+            </ul>
+          </article>
+          <article>
+            <h2 class="color-gray-2 pb-1 pt-6 lg:pt-6">Talks</h2>
+            <ul>
+              <% for (const { date, eventName, eventUrl, title, url } of talks) { %>
+              <li>
+                <a class="block pt-1" href="<%- url %>" target="_blank">
+                  <div class="Underline inline mr-1"><%- title %></div>
+                  <div class="color-gray-1 inline text-sm"><%- date %></div>
+                </a>
+                <div class="block color-gray-1 text-sm">
+                  <a href="<%- eventUrl %>" class="block pb-1"><span class="Underline inline"><%- eventName %></span></a>
+                </div>
+              </li>
+              <% } %>
+            </ul>
+          </article>
+        </div>
+        <div class="md:col-start-1 md:row-span-2 md:row-start-1 lg:col-span-2 lg:row-auto">
+          <article>
+            <h2 class="color-gray-2 pt-6 md:pt-8 lg:pt-8">Projects</h2>
+            <div class="lg:gap-x-8 lg:grid lg:grid-cols-2">
+              <div>
+                <h3 class="color-gray-1 pb-1 pt-2 text-sm">Tools and experiments</h3>
+                <ul>
+                  <% for (const { date, title, url } of projects.tools) { %>
+                  <li>
+                    <a class="block py-1" href="<%- url %>" target="_blank">
+                      <div class="Underline inline mr-1"><%- title %></div>
+                      <div class="color-gray-1 inline text-sm"><%- date %></div>
+                    </a>
+                  </li>
+                  <% } %>
+                </ul>
+                <h3 class="color-gray-1 pb-1 pt-2 text-sm">Cheatsheets</h3>
+                <ul class="py-1">
+                  <% for (const { title, url } of projects.cheatsheets) { %>
+                  <li>
+                    <a class="block" href="<%- url %>" target="_blank">
+                      <div class="Underline inline"><%- title %></div>
+                    </a>
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+              <div>
+                <h3 class="color-gray-1 pb-1 pt-2 text-sm">Figma plugins</h3>
+                <ul>
+                  <% for (const { date, title, url } of projects.figmaPlugins) { %>
+                  <li>
+                    <a class="block py-1" href="<%- url %>" target="_blank">
+                      <div class="Underline inline mr-1"><%- title %></div>
+                      <div class="color-gray-1 inline text-sm"><%- date %></div>
+                    </a>
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+      <footer class="color-gray-1 pb-4 pt-6 text-center text-sm md:pt-8">
+        <p>Made in Singapore</p>
+      </footer>
+    </div>
+    <%= include('analytics') %>
+  </body>
+</html>
