@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --color-black: #000;
   --color-gray-1: #808080; /* 50% */
   --color-gray-2: #bababa; /* 27% */
@@ -328,12 +329,6 @@ html {
 
   .Container {
     width: 1600px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
   }
 }
 
