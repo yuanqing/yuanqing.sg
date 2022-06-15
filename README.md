@@ -7,7 +7,7 @@ Clone and install:
 ```
 $ git clone https://github.com/yuanqing/yuanqing.sg
 $ cd yuanqing.sg
-$ yarn
+$ npm install
 ```
 
 ## Development
@@ -15,11 +15,11 @@ $ yarn
 To build and serve the site, and watch for changes, do:
 
 ```
-$ yarn run watch
+$ npm run watch
 ```
 
 Then, go to [`0.0.0.0:4242`](https://0.0.0.0:4242) in your web browser. Alternatively, do:
 
 ```
-$ yarn run open
+$ npm run open
 ```
