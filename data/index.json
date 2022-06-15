@@ -59,15 +59,22 @@
   ],
   "talks": [
     {
+      "title": "UX in China: More Is More, Super Apps, and Community",
+      "url": "https://youtu.be/ohxyxGR9tsA",
+      "date": "05.2022",
+      "eventName": "Config",
+      "eventUrl": "https://www.figma.com/blog/a-look-back-at-config-2022/"
+    },
+    {
       "title": "Favorite Figma Plugins",
-      "url": "https://youtube.com/watch?v=Gn63YcNSx8s&t=3026",
+      "url": "https://youtu.be/Gn63YcNSx8s&t=3026",
       "date": "06.2020",
       "eventName": "Friends of Figma Phillippines",
       "eventUrl": "https://friends.figma.com/events/details/figma-figma-philippines-presents-favorite-figma-plugins/"
     },
     {
       "title": "Figma Plugins: Working Precisely and Efficiently in Figma",
-      "url": "https://youtube.com/watch?v=ratKfVJp0p0&t=178",
+      "url": "https://youtu.be/ratKfVJp0p0&t=178",
       "date": "02.2020",
       "eventName": "Friends of Figma Singapore",
       "eventUrl": "https://friends.figma.com/events/details/figma-figma-singapore-presents-4-figma-lightning-talks-with-shopify-shopee-and-figmas-ceo-dylan-field/"
