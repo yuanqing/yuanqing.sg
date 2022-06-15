@@ -69,21 +69,21 @@
               <% for (const { date, eventName, eventUrl, title, url } of talks) { %>
               <li>
                 <% if (url !== null && eventUrl !== null) { %>
-                  <a class="block pt-1" href="<%- url %>" target="_blank">
-                    <div class="Underline inline mr-1"><%- title %></div>
-                    <div class="color-gray-1 inline text-sm"><%- date %></div>
-                  </a>
-                  <div class="block color-gray-1 text-sm">
-                    <a href="<%- eventUrl %>" class="block pb-1"><span class="Underline inline"><%- eventName %></span></a>
-                  </div>
+                <a class="block pt-1" href="<%- url %>" target="_blank">
+                  <div class="Underline inline mr-1"><%- title %></div>
+                  <div class="color-gray-1 inline text-sm"><%- date %></div>
+                </a>
+                <div class="block color-gray-1 text-sm">
+                  <a href="<%- eventUrl %>" class="block pb-1"><span class="Underline inline"><%- eventName %></span></a>
+                </div>
                 <% } else { %>
-                  <div class="block pt-1">
-                    <div class="Underline inline mr-1"><%- title %></div>
-                    <div class="color-gray-1 inline text-sm"><%- date %></div>
-                  </div>
-                  <div class="block color-gray-1 text-sm">
-                    <span class="block pb-1"><%- eventName %></span>
-                  </div>
+                <div class="block pt-1">
+                  <div class="Underline inline mr-1"><%- title %></div>
+                  <div class="color-gray-1 inline text-sm"><%- date %></div>
+                </div>
+                <div class="block color-gray-1 text-sm">
+                  <span class="block pb-1"><%- eventName %></span>
+                </div>
                 <% } %>
               </li>
               <% } %>
