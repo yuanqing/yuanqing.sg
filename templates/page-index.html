@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%= include('meta') %>
+    <%= partial('meta') %>
     <meta name="author" content="<%- author %>" />
     <meta name="robots" content="all" />
     <meta name="revisit-after" content="2 days" />
@@ -68,13 +68,23 @@
             <ul>
               <% for (const { date, eventName, eventUrl, title, url } of talks) { %>
               <li>
-                <a class="block pt-1" href="<%- url %>" target="_blank">
-                  <div class="Underline inline mr-1"><%- title %></div>
-                  <div class="color-gray-1 inline text-sm"><%- date %></div>
-                </a>
-                <div class="block color-gray-1 text-sm">
-                  <a href="<%- eventUrl %>" class="block pb-1"><span class="Underline inline"><%- eventName %></span></a>
-                </div>
+                <% if (url !== null && eventUrl !== null) { %>
+                  <a class="block pt-1" href="<%- url %>" target="_blank">
+                    <div class="Underline inline mr-1"><%- title %></div>
+                    <div class="color-gray-1 inline text-sm"><%- date %></div>
+                  </a>
+                  <div class="block color-gray-1 text-sm">
+                    <a href="<%- eventUrl %>" class="block pb-1"><span class="Underline inline"><%- eventName %></span></a>
+                  </div>
+                <% } else { %>
+                  <div class="block pt-1">
+                    <div class="Underline inline mr-1"><%- title %></div>
+                    <div class="color-gray-1 inline text-sm"><%- date %></div>
+                  </div>
+                  <div class="block color-gray-1 text-sm">
+                    <span class="block pb-1"><%- eventName %></span>
+                  </div>
+                <% } %>
               </li>
               <% } %>
             </ul>
@@ -128,6 +138,6 @@
         <p>Made in Singapore</p>
       </footer>
     </div>
-    <%= include('analytics') %>
+    <%= partial('analytics') %>
   </body>
 </html>
