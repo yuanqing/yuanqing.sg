@@ -12,10 +12,16 @@ $ npm install
 
 ## Development
 
-To build and serve the site, and watch for changes, do:
+To build the website, and watch for changes, do:
 
 ```
 $ npm run watch
+```
+
+To serve the website, do:
+
+```
+$ npm run serve
 ```
 
 Then, go to [`0.0.0.0:4242`](https://0.0.0.0:4242) in your web browser. Alternatively, do:
