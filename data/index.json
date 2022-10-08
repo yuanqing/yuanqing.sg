@@ -83,6 +83,11 @@
   "projects": {
     "tools": [
       {
+        "title": "A CLI to run Stable Diffusion locally via a REST API on an M1/M2 MacBook",
+        "url": "https://twitter.com/yuanqinglim/status/1569843135194480640",
+        "date": "09.2022"
+      },
+      {
         "title": "A template to bootstrap a paid Figma plugin powered by Gumroad",
         "url": "https://twitter.com/yuanqinglim/status/1459912310537916416",
         "date": "11.2021"
