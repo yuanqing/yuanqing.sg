@@ -1,13 +1,14 @@
 {
   "title": "Yuan Qing Lim",
   "author": "Yuan Qing Lim",
+  "role": "Staff Product Designer, Shopify",
   "description": "I’m a designer, software engineer and writer. I enjoy building design tools and solving problems using design and code. At Shopify, I design experiences that make commerce better for merchants everywhere.",
+  "twitter": {
+    "handle": "@yuanqinglim",
+    "url": "https://twitter.com/yuanqinglim"
+  },
   "email": "desk@yuanqing.sg",
   "links": [
-    {
-      "name": "Twitter",
-      "url": "https://twitter.com/yuanqinglim"
-    },
     {
       "name": "LinkedIn",
       "url": "https://linkedin.com/in/yuan-qing-lim"
@@ -25,62 +26,14 @@
       "url": "https://yuanqing.medium.com"
     }
   ],
-  "writing": [
-    {
-      "url": "https://twitter.com/yuanqinglim/status/1467860389174001668",
-      "title": "Tips for your UX portfolio presentation",
-      "date": "12.2021"
-    },
-    {
-      "url": "https://twitter.com/yuanqinglim/status/1379243739009359872",
-      "title": "Monetization in the Figma plugin ecosystem",
-      "date": "04.2021"
-    },
-    {
-      "url": "https://ux.shopify.com/the-figma-plugins-that-make-me-a-better-designer-28eb844b0506?source=friends_link&sk=e6c996958f7b9300194ca8f16e76215e",
-      "title": "The Figma plugins that make me a better designer",
-      "date": "03.2021"
-    },
-    {
-      "url": "https://uxdesign.cc/whitespace-in-ui-design-44e332c8e4a?source=friends_link&sk=94e5f3b7d86965cda665f93432582fa6",
-      "title": "Applying white space in UI design",
-      "date": "02.2021"
-    },
-    {
-      "url": "https://twitter.com/yuanqinglim/status/1251129638471954438",
-      "title": "Meaningful career advice",
-      "date": "04.2020"
-    },
-    {
-      "url": "https://uxdesign.cc/the-ux-of-figma-plugins-f4f896f8cf35?source=friends_link&sk=08a70b856568099811cb30cb24204558",
-      "title": "The UX of Figma plugins",
-      "date": "02.2020"
-    }
-  ],
-  "talks": [
-    {
-      "title": "UX in China: More Is More, Super Apps, and Community",
-      "url": "https://youtu.be/ohxyxGR9tsA",
-      "date": "05.2022",
-      "eventName": "Config 2022",
-      "eventUrl": "https://www.figma.com/blog/a-look-back-at-config-2022/"
-    },
-    {
-      "title": "Favorite Figma Plugins",
-      "url": "https://youtu.be/Gn63YcNSx8s&t=3026",
-      "date": "06.2020",
-      "eventName": "Friends of Figma Phillippines",
-      "eventUrl": "https://friends.figma.com/events/details/figma-figma-philippines-presents-favorite-figma-plugins/"
-    },
-    {
-      "title": "Figma Plugins: Working Precisely and Efficiently in Figma",
-      "url": "https://youtu.be/ratKfVJp0p0&t=178",
-      "date": "02.2020",
-      "eventName": "Friends of Figma Singapore",
-      "eventUrl": "https://friends.figma.com/events/details/figma-figma-singapore-presents-4-figma-lightning-talks-with-shopify-shopee-and-figmas-ceo-dylan-field/"
-    }
-  ],
   "projects": {
+    "highlights": [
+      {
+        "title": "Create Figma Plugin",
+        "description": "The comprehensive toolkit for developing plugins and widgets for Figma and FigJam",
+        "url": "https://yuanqing.github.io/create-figma-plugin/"
+      }
+    ],
     "tools": [
       {
         "title": "A CLI to run Stable Diffusion locally via a REST API on an M1/M2 MacBook",
@@ -91,16 +44,6 @@
         "title": "A template to bootstrap a paid Figma plugin powered by Gumroad",
         "url": "https://twitter.com/yuanqinglim/status/1459912310537916416",
         "date": "11.2021"
-      },
-      {
-        "title": "Monorepo for my Figma plugins",
-        "url": "https://github.com/yuanqing/figma-plugins",
-        "date": "09.2019"
-      },
-      {
-        "title": "The comprehensive toolkit for developing plugins and widgets for Figma and FigJam",
-        "url": "https://yuanqing.github.io/create-figma-plugin/",
-        "date": "07.2019"
       },
       {
         "title": "Create a nice single-page website from one or more Markdown files",
@@ -172,90 +115,137 @@
     ],
     "figmaPlugins": [
       {
-        "title": "Draw perfect orthogonal connectors between layers",
-        "url": "https://figma.com/community/plugin/988836825341227586/Draw-Connector",
-        "date": "07.2021"
+        "title": "Clean Document",
+        "url": "https://figma.com/community/plugin/767379019764649932/Clean-Document"
       },
       {
-        "title": "Upscale low resolution images using machine learning",
-        "url": "https://www.figma.com/community/plugin/939832535166467194/Upscale-Image",
-        "date": "02.2021"
+        "title": "Component Utilties",
+        "url": "https://figma.com/community/plugin/785894722513806497/Component-Utilities"
       },
       {
-        "title": "Split, normalize, and bulk copy and paste text layers",
-        "url": "https://figma.com/community/plugin/899501266127939530/Text-Utilities",
-        "date": "10.2020"
+        "title": "Draw Connector",
+        "url": "https://figma.com/community/plugin/988836825341227586/Draw-Connector"
       },
       {
-        "title": "Rasterize layers at a high resolution",
-        "url": "https://figma.com/community/plugin/837846252158418235/Flatten-Selection-to-Bitmap",
-        "date": "05.2020"
+        "title": "Draw Mask Under Selection",
+        "url": "https://figma.com/community/plugin/806532458729477508/Draw-Mask-Under-Selection"
       },
       {
-        "title": "Precisely set the size of layers, while ignoring constraints",
-        "url": "https://figma.com/community/plugin/817982008781589678/Set-Layer-Size",
-        "date": "03.2020"
+        "title": "Draw Slice Over Selection",
+        "url": "https://figma.com/community/plugin/767379335945775056/Draw-Slice-Over-Selection"
       },
       {
-        "title": "Draw a mask under the selection",
-        "url": "https://figma.com/community/plugin/806532458729477508/Draw-Mask-Under-Selection",
-        "date": "02.2020"
+        "title": "Distribute Layers",
+        "url": "https://figma.com/community/plugin/767379264700569551/Distribute-Layers"
       },
       {
-        "title": "Select layers based on name, type, or similarity",
-        "url": "https://figma.com/community/plugin/799648692768237063/Select-Layers",
-        "date": "02.2020"
+        "title": "Flatten Selection to Bitmap",
+        "url": "https://figma.com/community/plugin/837846252158418235/Flatten-Selection-to-Bitmap"
       },
       {
-        "title": "Insert and retain the original resolution of big images",
-        "url": "https://figma.com/community/plugin/799646392992487942/Insert-Big-Image",
-        "date": "01.2020"
+        "title": "Format Currency",
+        "url": "https://figma.com/community/plugin/780785006732555859/Format-Currency"
       },
       {
-        "title": "Copy and create components, and replace layers with components",
-        "url": "https://figma.com/community/plugin/785894722513806497/Component-Utilities",
-        "date": "12.2019"
+        "title": "Insert Big Image",
+        "url": "https://figma.com/community/plugin/799646392992487942/Insert-Big-Image"
       },
       {
-        "title": "Format and convert between currencies",
-        "url": "https://figma.com/community/plugin/780785006732555859/Format-Currency",
-        "date": "12.2019"
+        "title": "Language Tester",
+        "url": "https://figma.com/community/plugin/767379122107077581/Language-Tester"
       },
       {
-        "title": "Organize layers on the page",
-        "url": "https://figma.com/community/plugin/786286754606650597/Organize-Layers",
-        "date": "12.2019"
+        "title": "Move Layers",
+        "url": "https://figma.com/community/plugin/767379204511357902/Move-Layers"
       },
       {
-        "title": "Sort layers by name or position",
-        "url": "https://figma.com/community/plugin/767379414704079825/Sort-Layers",
-        "date": "12.2019"
+        "title": "Organize Layers",
+        "url": "https://figma.com/community/plugin/786286754606650597/Organize-Layers"
       },
       {
-        "title": "Automagically organize and clean up your Figma document",
-        "url": "https://figma.com/community/plugin/767379019764649932/Clean-Document",
-        "date": "10.2019"
+        "title": "Select Layers",
+        "url": "https://figma.com/community/plugin/799648692768237063/Select-Layers"
       },
       {
-        "title": "Distribute layers in a given direction and offset",
-        "url": "https://figma.com/community/plugin/767379264700569551/Distribute-Layers",
-        "date": "10.2019"
+        "title": "Set Layer Size",
+        "url": "https://figma.com/community/plugin/817982008781589678/Set-Layer-Size"
       },
       {
-        "title": "Draw a slice over the selection",
-        "url": "https://figma.com/community/plugin/767379335945775056/Draw-Slice-Over-Selection",
-        "date": "10.2019"
+        "title": "Sort Layers",
+        "url": "https://figma.com/community/plugin/767379414704079825/Sort-Layers"
       },
       {
-        "title": "Precisely move layers",
-        "url": "https://figma.com/community/plugin/767379204511357902/Move-Layers",
-        "date": "10.2019"
+        "title": "Text Utilities",
+        "url": "https://figma.com/community/plugin/899501266127939530/Text-Utilities"
       },
       {
-        "title": "Test your UI in different languages",
-        "url": "https://figma.com/community/plugin/767379122107077581/Language-Tester",
-        "date": "10.2019"
+        "title": "Upscale Image",
+        "url": "https://www.figma.com/community/plugin/939832535166467194/Upscale-Image"
       }
     ]
-  }
+  },
+  "writing": [
+    {
+      "url": "https://twitter.com/yuanqinglim/status/1467860389174001668",
+      "title": "Tips for your UX portfolio presentation",
+      "date": "12.2021",
+      "publication": null
+    },
+    {
+      "url": "https://twitter.com/yuanqinglim/status/1379243739009359872",
+      "title": "Monetization in the Figma plugin ecosystem",
+      "date": "04.2021",
+      "publication": null
+    },
+    {
+      "url": "https://ux.shopify.com/the-figma-plugins-that-make-me-a-better-designer-28eb844b0506?source=friends_link&sk=e6c996958f7b9300194ca8f16e76215e",
+      "title": "The Figma plugins that make me a better designer",
+      "date": "03.2021",
+      "publication": "Shopify UX"
+    },
+    {
+      "url": "https://uxdesign.cc/whitespace-in-ui-design-44e332c8e4a?source=friends_link&sk=94e5f3b7d86965cda665f93432582fa6",
+      "title": "Applying white space in UI design",
+      "date": "02.2021",
+      "publication": "UX Collective"
+    },
+    {
+      "url": "https://twitter.com/yuanqinglim/status/1251129638471954438",
+      "title": "Meaningful career advice",
+      "date": "04.2020",
+      "publication": null
+    },
+    {
+      "url": "https://uxdesign.cc/the-ux-of-figma-plugins-f4f896f8cf35?source=friends_link&sk=08a70b856568099811cb30cb24204558",
+      "title": "The UX of Figma plugins",
+      "date": "02.2020",
+      "publication": "UX Collective"
+    }
+  ],
+  "talks": [
+    {
+      "title": "UX in China: More Is More, Super Apps, and Community",
+      "url": "https://youtu.be/ohxyxGR9tsA",
+      "date": "05.2022",
+      "eventName": "Config 2022"
+    },
+    {
+      "title": "Asynchronous Communication for Designers",
+      "url": null,
+      "date": "02.2022",
+      "eventName": "GovTech UX Week 2022"
+    },
+    {
+      "title": "Favorite Figma Plugins",
+      "url": "https://youtu.be/Gn63YcNSx8s&t=3026",
+      "date": "06.2020",
+      "eventName": "Friends of Figma Phillippines"
+    },
+    {
+      "title": "Figma Plugins: Working Precisely and Efficiently in Figma",
+      "url": "https://youtu.be/ratKfVJp0p0&t=178",
+      "date": "02.2020",
+      "eventName": "Friends of Figma Singapore"
+    }
+  ]
 }

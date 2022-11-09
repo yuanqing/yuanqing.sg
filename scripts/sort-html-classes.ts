@@ -1,5 +1,5 @@
-import fs from 'fs-extra'
 import { globby } from 'globby'
+import fs from 'node:fs/promises'
 
 const prefixes = ['md', 'lg', 'xl', 'selection']
 
@@ -19,7 +19,7 @@ async function main(): Promise<void> {
           .trim()}"`
       }
     )
-    await fs.outputFile(file, result)
+    await fs.writeFile(file, result)
   }
 }
 main()

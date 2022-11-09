@@ -3,4 +3,3 @@
 *.log
 build/
 node_modules/
-stats.json

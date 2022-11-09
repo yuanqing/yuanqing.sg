@@ -1,4 +1,4 @@
-import purifyCss from 'purify-css'
+import { default as purifyCss } from 'purify-css'
 
 function main(): void {
   const args = process.argv.slice(2)

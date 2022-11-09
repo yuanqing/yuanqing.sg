@@ -18,113 +18,84 @@
     <meta property="og:url" content="<%- url %>" />
   </head>
   <body class="bg-black color-white font-sans text-base selection:bg-white selection:color-black">
-    <div class="Container m-auto px-2 md:px-0">
-      <header>
-        <div class="pt-8 md:gap-x-8 md:grid md:grid-cols-2 md:grid-rows-1 md:pt-10 lg:pt-12">
-          <div>
-            <h1 class="color-gray-2"><%- title %></h1>
-            <p class="pt-3 text-lg lg:pr-4"><%- description %></p>
-          </div>
-          <div class="pt-4 md:py-0">
-            <div class="HeroImage bg-center bg-cover" style="background-image: url(/media/yuanqing.jpg)"></div>
-          </div>
+    <div class="Container m-auto px-1 md:px-0">
+      <header class="pt-2 md:pt-3">
+        <div class="pb-1.5 md:gap-x-1 md:grid md:grid-cols-2">
+          <h1><%- title %></h1>
+          <p class="color-gray-2"><%- role %></p>
+        </div>
+        <div class="pb-1.5 lg:gap-x-1 lg:grid lg:grid-cols-2">
+          <div class="HeroImage" style="background-image: url(/media/yuanqing.jpg)"></div>
+          <p class="pt-1 text-lg lg:border-gray-1 lg:border-t-1 lg:row-start-1"><%- description %></p>
         </div>
       </header>
-      <main class="md:gap-x-8 md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
-        <div class="md:col-start-2 md:row-start-1 lg:col-start-4">
-          <div class="color-gray-2 grid grid-cols-2 pt-2 text-sm md:block md:pt-7">
-            <article>
-              <ul class="py-1">
-                <% for (const { name, url } of links) { %>
-                <li>
-                  <a class="block" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
-                </li>
-                <% } %>
-              </ul>
-            </article>
-            <article>
-              <p>
-                <a class="block py-1" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
-              </p>
-            </article>
-          </div>
-        </div>
-        <div class="md:col-start-2 md:row-start-2 lg:col-start-3 lg:row-start-1">
+      <main>
+        <div class="color-gray-2 gap-x-1 grid grid-cols-2 lg:text-sm">
           <article>
-            <h2 class="color-gray-2 pb-1 pt-6 lg:pt-8">Writing</h2>
-            <ul>
-              <% for (const { date, title, url } of writing) { %>
+            <ul class="border-gray-1 border-t-1 pt-0.5 lg:border-t-0 lg:gap-x-1 lg:grid lg:grid-cols-2 lg:pt-0">
               <li>
-                <a class="block py-1" href="<%- url %>" target="_blank">
-                  <div class="Underline inline mr-1"><%- title %></div>
-                  <div class="color-gray-1 inline text-sm"><%- date %></div>
-                </a>
+                <a class="block pt-0.25 lg:border-gray-1 lg:border-t-1 lg:pt-0.5" href="<%- twitter.url %>"><span class="Underline"><%- twitter.handle %></span></a>
               </li>
-              <% } %>
+              <li>
+                <a class="block pt-0.25 lg:border-gray-1 lg:border-t-1 lg:pt-0.5" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
+              </li>
             </ul>
           </article>
           <article>
-            <h2 class="color-gray-2 pb-1 pt-6 lg:pt-6">Talks</h2>
-            <ul>
-              <% for (const { date, eventName, eventUrl, title, url } of talks) { %>
+            <ul class="border-gray-1 border-t-1 pt-0.5 lg:border-t-0 lg:gap-x-1 lg:grid lg:grid-cols-4 lg:pt-0">
+              <% for (const { name, url } of links) { %>
               <li>
-                <% if (url !== null && eventUrl !== null) { %>
-                <a class="block pt-1" href="<%- url %>" target="_blank">
-                  <div class="Underline inline mr-1"><%- title %></div>
-                  <div class="color-gray-1 inline text-sm"><%- date %></div>
-                </a>
-                <div class="block color-gray-1 text-sm">
-                  <a href="<%- eventUrl %>" class="block pb-1"><span class="Underline inline"><%- eventName %></span></a>
-                </div>
-                <% } else { %>
-                <div class="block pt-1">
-                  <div class="Underline inline mr-1"><%- title %></div>
-                  <div class="color-gray-1 inline text-sm"><%- date %></div>
-                </div>
-                <div class="block color-gray-1 text-sm">
-                  <span class="block pb-1"><%- eventName %></span>
-                </div>
-                <% } %>
+                <a class="block pt-0.25 lg:border-gray-1 lg:border-t-1 lg:pt-0.5" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
               </li>
               <% } %>
             </ul>
           </article>
         </div>
-        <div class="md:col-start-1 md:row-span-2 md:row-start-1 lg:col-span-2 lg:row-auto">
-          <article>
-            <h2 class="color-gray-2 pt-6 md:pt-8 lg:pt-8">Projects</h2>
-            <div class="lg:gap-x-8 lg:grid lg:grid-cols-2">
+        <div class="lg:gap-x-1 lg:grid lg:grid-cols-2 lg:pt-3">
+          <article class="pt-2 lg:pt-0">
+            <div aria-hidden="true"><span class="ChineseCharacter">创</span><span class="ChineseCharacter">作</span></div>
+            <h2 class="pb-1.5 pt-0.25 text-xl">Making</h2>
+            <ul>
+              <% for (const { title, description, url } of projects.highlights) { %>
+              <li>
+                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg" href="<%- url %>" target="_blank">
+                  <span class="Underline inline"><%- title %></span>
+                  <span class="color-gray-2"><%- description %></span>
+                </a>
+              </li>
+              <% } %>
+            </ul>
+            <div class="md:gap-x-1 md:grid md:grid-cols-2">
               <div>
-                <h3 class="color-gray-1 pb-1 pt-2 text-sm">Tools and experiments</h3>
+                <h3 class="border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg">Tools and experiments</h3>
                 <ul>
                   <% for (const { date, title, url } of projects.tools) { %>
                   <li>
-                    <a class="block py-1" href="<%- url %>" target="_blank">
-                      <div class="Underline inline mr-1"><%- title %></div>
-                      <div class="color-gray-1 inline text-sm"><%- date %></div>
-                    </a>
-                  </li>
-                  <% } %>
-                </ul>
-                <h3 class="color-gray-1 pb-1 pt-2 text-sm">Cheatsheets</h3>
-                <ul class="py-1">
-                  <% for (const { title, url } of projects.cheatsheets) { %>
-                  <li>
-                    <a class="block" href="<%- url %>" target="_blank">
+                    <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.75" href="<%- url %>" target="_blank">
                       <div class="Underline inline"><%- title %></div>
+                      <div class="color-gray-2 pt-0.25 text-sm"><%- date %></div>
                     </a>
                   </li>
                   <% } %>
                 </ul>
               </div>
               <div>
-                <h3 class="color-gray-1 pb-1 pt-2 text-sm">Figma plugins</h3>
-                <ul>
+                <h3 class="border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg">Figma plugins</h3>
+                <ul class="border-gray-1 border-t-1 pb-1.5 pt-0.5">
                   <% for (const { date, title, url } of projects.figmaPlugins) { %>
                   <li>
-                    <a class="block py-1" href="<%- url %>" target="_blank">
+                    <a class="block py-0.25" href="<%- url %>" target="_blank">
                       <div class="Underline inline mr-1"><%- title %></div>
-                      <div class="color-gray-1 inline text-sm"><%- date %></div>
+                    </a>
+                  </li>
+                  <% } %>
+                </ul>
+                <h3 class="border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg">Cheatsheets</h3>
+                <ul class="border-gray-1 border-t-1 pb-1.5 pt-0.5">
+                  <% for (const { title, url } of projects.cheatsheets) { %>
+                  <li>
+                    <a class="block py-0.25" href="<%- url %>" target="_blank">
+                      <div class="Underline inline"><%- title %></div>
                     </a>
                   </li>
                   <% } %>
@@ -132,9 +103,60 @@
               </div>
             </div>
           </article>
+          <div class="md:gap-x-1 md:grid md:grid-cols-2">
+            <article class="pt-1.5 lg:pt-0">
+              <div aria-hidden="true"><span class="ChineseCharacter">写</span><span class="ChineseCharacter">作</span></div>
+              <h2 class="pb-1.5 pt-0.25 text-xl">Writing</h2>
+              <ul>
+                <% for (const { date, publication, title, url } of writing) { %>
+                <li>
+                  <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.75" href="<%- url %>" target="_blank">
+                    <div class="Underline inline"><%- title %></div>
+                    <div class="color-gray-2 flex pt-0.25 text-sm">
+                      <div><%- date %></div>
+                      <% if (publication !== null) { %>
+                      <div class="color-gray-1 px-0.5 select-none">&frasl;</div>
+                      <div><%- publication %></div>
+                      <% } %>
+                    </div>
+                  </a>
+                </li>
+                <% } %>
+              </ul>
+            </article>
+            <article class="pt-1.5 lg:pt-0">
+              <div aria-hidden="true"><span class="ChineseCharacter">讲</span><span class="ChineseCharacter">座</span></div>
+              <h2 class="pb-1.5 pt-0.25 text-xl">Speaking</h2>
+              <ul>
+                <% for (const { date, eventName, title, url } of talks) { %>
+                <li>
+                  <% if (url !== null) { %>
+                  <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.75" href="<%- url %>" target="_blank">
+                    <div class="Underline inline mr-1"><%- title %></div>
+                    <div class="color-gray-2 flex pt-0.25 text-sm">
+                      <div><%- date %></div>
+                      <div class="color-gray-1 px-0.5 select-none">&frasl;</div>
+                      <div><%- eventName %></div>
+                    </div>
+                  </a>
+                  <% } else { %>
+                  <div class="block border-gray-1 border-t-1 pb-1.5 pt-0.75">
+                    <div class="Underline inline mr-1"><%- title %></div>
+                    <div class="color-gray-2 flex pt-0.25 text-sm">
+                      <div><%- date %></div>
+                      <div class="color-gray-1 px-0.5 select-none">&frasl;</div>
+                      <div><%- eventName %></div>
+                    </div>
+                  </div>
+                  <% } %>
+                </li>
+                <% } %>
+              </ul>
+            </article>
+          </div>
         </div>
       </main>
-      <footer class="color-gray-1 pb-4 pt-6 text-center text-sm md:pt-8">
+      <footer class="color-gray-2 pb-1.5 pt-1 text-center text-sm">
         <p>Made in Singapore</p>
       </footer>
     </div>
