@@ -30,30 +30,30 @@
         </div>
       </header>
       <main>
-        <div class="color-gray-2 gap-x-1 grid grid-cols-2 text-sm">
+        <div class="color-gray-2 gap-x-1 grid grid-cols-2 text-sm md:block lg:gap-x-1 lg:grid lg:grid-cols-2">
           <article>
-            <ul class="lg:gap-x-1 lg:grid lg:grid-cols-2">
+            <ul class="md:gap-x-1 md:grid md:grid-cols-2">
               <li>
-                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5" href="<%- twitter.url %>"><span class="Underline"><%- twitter.handle %></span></a>
+                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 lg:pb-0.5" href="<%- twitter.url %>"><span class="Underline"><%- twitter.handle %></span></a>
               </li>
               <li>
-                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
+                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 lg:pb-0.5" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
               </li>
             </ul>
           </article>
           <article>
-            <ul class="border-gray-1 border-t-1 pt-0.5 lg:border-t-0 lg:gap-x-1 lg:grid lg:grid-cols-4 lg:pt-0">
+            <ul class="border-gray-1 border-t-1 pt-0.25 md:border-t-0 md:gap-x-1 md:grid md:grid-cols-4 md:pt-0">
               <% for (const { name, url } of links) { %>
               <li>
-                <a class="block pt-0.25 lg:border-gray-1 lg:border-t-1 lg:pt-0.5" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
+                <a class="block pt-0.25 md:border-gray-1 md:border-t-1 md:pb-1.5 md:pt-0.5 lg:pb-0.5" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
               </li>
               <% } %>
             </ul>
           </article>
         </div>
-        <div class="lg:gap-x-1 lg:grid lg:grid-cols-2 lg:pt-3">
-          <article class="pt-2 lg:pt-0">
-            <div aria-hidden="true"><span class="ChineseCharacter">创</span><span class="ChineseCharacter">作</span></div>
+        <div class="pt-2 md:pt-3 lg:gap-x-1 lg:grid lg:grid-cols-2 lg:pt-2.5">
+          <article>
+            <div aria-hidden="true"><span class="Glyph">创</span><span class="Glyph">作</span></div>
             <h2 class="pb-1.5 pt-0.25 text-xl">Making</h2>
             <ul>
               <% for (const { title, description, url } of projects.highlights) { %>
@@ -105,7 +105,7 @@
           </article>
           <div class="md:gap-x-1 md:grid md:grid-cols-2">
             <article class="pt-1.5 lg:pt-0">
-              <div aria-hidden="true"><span class="ChineseCharacter">写</span><span class="ChineseCharacter">作</span></div>
+              <div aria-hidden="true"><span class="Glyph">写</span><span class="Glyph">作</span></div>
               <h2 class="pb-1.5 pt-0.25 text-xl">Writing</h2>
               <ul>
                 <% for (const { date, publication, title, url } of writing) { %>
@@ -115,7 +115,7 @@
                     <div class="color-gray-2 flex pt-0.25 text-sm">
                       <div><%- date %></div>
                       <% if (publication !== null) { %>
-                      <div class="color-gray-1 px-0.5 select-none">&frasl;</div>
+                      <div class="color-gray-2 px-0.5 select-none">&frasl;</div>
                       <div><%- publication %></div>
                       <% } %>
                     </div>
@@ -125,7 +125,7 @@
               </ul>
             </article>
             <article class="pt-1.5 lg:pt-0">
-              <div aria-hidden="true"><span class="ChineseCharacter">讲</span><span class="ChineseCharacter">座</span></div>
+              <div aria-hidden="true"><span class="Glyph">讲</span><span class="Glyph">座</span></div>
               <h2 class="pb-1.5 pt-0.25 text-xl">Speaking</h2>
               <ul>
                 <% for (const { date, eventName, title, url } of talks) { %>
@@ -135,7 +135,7 @@
                     <div class="Underline inline mr-1"><%- title %></div>
                     <div class="color-gray-2 flex pt-0.25 text-sm">
                       <div><%- date %></div>
-                      <div class="color-gray-1 px-0.5 select-none">&frasl;</div>
+                      <div class="color-gray-2 px-0.5 select-none">&frasl;</div>
                       <div><%- eventName %></div>
                     </div>
                   </a>
