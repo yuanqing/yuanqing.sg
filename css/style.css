@@ -287,6 +287,10 @@ html {
   .lg\:pt-2\.5 {
     padding-top: 2.5rem;
   }
+  .lg\:px-0\.75 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
 
   .Container {
     width: 1160px;

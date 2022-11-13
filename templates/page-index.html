@@ -1,4 +1,12 @@
-<% const metaShareImage = `https://yuanqing.sg${media['share']}` %>
+<!-- prettier-ignore -->
+<%
+  const metaShareImage = `https://yuanqing.sg${media['share']}`
+  function widont (string) {
+    return string.replace(/ ([^ ]+)$/, function (_, lastWord) {
+      return `&nbsp;${lastWord}`
+    })
+  }
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,10 +42,10 @@
           <article>
             <ul class="md:gap-x-1 md:grid md:grid-cols-2">
               <li>
-                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 lg:pb-0.5" href="<%- twitter.url %>"><span class="Underline"><%- twitter.handle %></span></a>
+                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 lg:px-0.75" href="<%- twitter.url %>"><span class="Underline"><%- twitter.handle %></span></a>
               </li>
               <li>
-                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 lg:pb-0.5" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
+                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 lg:px-0.75" href="mailto:<%- email %>"><span class="Underline"><%- email %></span></a>
               </li>
             </ul>
           </article>
@@ -45,7 +53,7 @@
             <ul class="border-gray-1 border-t-1 pt-0.25 md:border-t-0 md:gap-x-1 md:grid md:grid-cols-4 md:pt-0">
               <% for (const { name, url } of links) { %>
               <li>
-                <a class="block pt-0.25 md:border-gray-1 md:border-t-1 md:pb-1.5 md:pt-0.5 lg:pb-0.5" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
+                <a class="block pt-0.25 md:border-gray-1 md:border-t-1 md:pb-1.5 md:pt-0.5 lg:px-0.75" href="<%- url %>" target="_blank"><span class="Underline"><%- name %></span></a>
               </li>
               <% } %>
             </ul>
@@ -60,7 +68,7 @@
               <li>
                 <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg" href="<%- url %>" target="_blank">
                   <span class="Underline inline"><%- title %></span>
-                  <span class="color-gray-2"><%- description %></span>
+                  <span class="color-gray-2"><%= widont(description) %></span>
                 </a>
               </li>
               <% } %>
@@ -72,7 +80,7 @@
                   <% for (const { date, title, url } of projects.tools) { %>
                   <li>
                     <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.75" href="<%- url %>" target="_blank">
-                      <div class="Underline inline"><%- title %></div>
+                      <div class="Underline inline"><%= widont(title) %></div>
                       <div class="color-gray-2 pt-0.25 text-sm"><%- date %></div>
                     </a>
                   </li>
@@ -85,7 +93,7 @@
                   <% for (const { date, title, url } of projects.figmaPlugins) { %>
                   <li>
                     <a class="block py-0.25" href="<%- url %>" target="_blank">
-                      <div class="Underline inline mr-1"><%- title %></div>
+                      <div class="Underline inline mr-1"><%= widont(title) %></div>
                     </a>
                   </li>
                   <% } %>
@@ -111,7 +119,7 @@
                 <% for (const { date, publication, title, url } of writing) { %>
                 <li>
                   <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.75" href="<%- url %>" target="_blank">
-                    <div class="Underline inline"><%- title %></div>
+                    <div class="Underline inline"><%= widont(title) %></div>
                     <div class="color-gray-2 flex pt-0.25 text-sm">
                       <div><%- date %></div>
                       <% if (publication !== null) { %>
@@ -132,7 +140,7 @@
                 <li>
                   <% if (url !== null) { %>
                   <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.75" href="<%- url %>" target="_blank">
-                    <div class="Underline inline mr-1"><%- title %></div>
+                    <div class="Underline inline mr-1"><%= widont(title) %></div>
                     <div class="color-gray-2 flex pt-0.25 text-sm">
                       <div><%- date %></div>
                       <div class="color-gray-2 px-0.5 select-none">&frasl;</div>
