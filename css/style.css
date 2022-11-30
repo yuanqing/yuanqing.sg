@@ -68,10 +68,12 @@ html {
 }
 .text-lg {
   font-size: 1.625rem;
+  letter-spacing: -0.015625rem;
   line-height: 2.125rem;
 }
 .text-xl {
   font-size: 2.5rem;
+  letter-spacing: -0.03125rem;
   line-height: 2.5rem;
 }
 
@@ -178,6 +180,9 @@ html {
 .pb-1\.5 {
   padding-bottom: 1.5rem;
 }
+.pb-1\.75 {
+  padding-bottom: 1.75rem;
+}
 
 .Container {
   min-width: 360px;
@@ -196,17 +201,16 @@ html {
   display: inline-block;
   width: 2.25rem;
   height: 2.25rem;
-  padding-top: 0.5rem;
   background-color: var(--color-white);
   border-radius: 9999px;
   color: var(--color-black);
   font-size: 1.25rem;
-  line-height: 1.25rem;
+  line-height: 2.25rem;
   text-align: center;
   user-select: none;
 }
 .Glyph + .Glyph {
-  margin-left: 0.25rem;
+  margin-left: 0.1875rem;
 }
 
 @media (min-width: 640px) {
@@ -258,6 +262,10 @@ html {
 }
 
 @media (min-width: 1200px) {
+  .lg\:text-left {
+    text-align: left;
+  }
+
   .lg\:grid {
     display: grid;
   }
