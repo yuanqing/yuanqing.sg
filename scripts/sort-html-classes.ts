@@ -1,5 +1,6 @@
-import { globby } from 'globby'
 import fs from 'node:fs/promises'
+
+import { globby } from 'globby'
 
 const prefixes = ['md', 'lg', 'xl', 'selection']
 
@@ -10,7 +11,7 @@ async function main(): Promise<void> {
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8')
     const result = html.replace(
-      /class="([^\"]+)"/g,
+      /class="([^"]+)"/g,
       function (_: string, classes: string) {
         return `class="${classes
           .split(/ +/)
