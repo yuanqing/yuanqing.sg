@@ -29,7 +29,7 @@
     <div class="Container m-auto px-1 md:px-0">
       <header class="pt-2 md:pt-3">
         <div class="pb-1.5 md:gap-x-1 md:grid md:grid-cols-2">
-          <h1><%- title %></h1>
+          <h1 class="lg:color-gray-2"><%- title %></h1>
           <p class="color-gray-2"><%- role %></p>
         </div>
         <div class="pb-1.5 lg:gap-x-1 lg:grid lg:grid-cols-2">
@@ -61,9 +61,9 @@
         </div>
         <div class="pt-2 md:pt-3 lg:gap-x-1 lg:grid lg:grid-cols-2 lg:pt-2.5">
           <article>
-            <div class="text-center lg:text-left">
-              <div aria-hidden="true"><span class="Glyph">创</span><span class="Glyph">作</span></div>
-              <h2 class="pb-1.75 pt-0.25 text-xl">Making</h2>
+            <div class="flex gap-0.5 lg:flex-col-reverse lg:gap-0.25">
+              <h2 class="pb-1.75 pt-0.25 text-xl lg:pt-0">Making</h2>
+              <div aria-hidden="true" class="pt-0.25 lg:pt-0"><span class="Glyph bg-gray-2 lg:bg-white">创</span><span class="Glyph bg-gray-2 lg:bg-white">作</span></div>
             </div>
             <ul>
               <% for (const { title, description, url } of projects.highlights) { %>
@@ -115,9 +115,9 @@
           </article>
           <div class="md:gap-x-1 md:grid md:grid-cols-2">
             <article class="pt-1.5 lg:pt-0">
-              <div class="text-center lg:text-left">
-                <div aria-hidden="true"><span class="Glyph">写</span><span class="Glyph">作</span></div>
-                <h2 class="pb-1.75 pt-0.25 text-xl">Writing</h2>
+              <div class="flex gap-0.5 lg:flex-col-reverse lg:gap-0.25">
+                <h2 class="pb-1.75 pt-0.25 text-xl lg:pt-0">Writing</h2>
+                <div aria-hidden="true" class="pt-0.25 lg:pt-0"><span class="Glyph bg-gray-2 lg:bg-white">写</span><span class="Glyph bg-gray-2 lg:bg-white">作</span></div>
               </div>
               <ul>
                 <% for (const { date, publication, title, url } of writing) { %>
@@ -137,9 +137,9 @@
               </ul>
             </article>
             <article class="pt-1.5 lg:pt-0">
-              <div class="text-center lg:text-left">
-                <div aria-hidden="true"><span class="Glyph">讲</span><span class="Glyph">座</span></div>
-                <h2 class="font-serif pb-1.75 pt-0.25 text-xl">Speaking</h2>
+              <div class="flex gap-0.5 lg:flex-col-reverse lg:gap-0.25">
+                <h2 class="pb-1.75 pt-0.25 text-xl lg:pt-0">Speaking</h2>
+                <div aria-hidden="true" class="pt-0.25 lg:pt-0"><span class="Glyph bg-gray-2 lg:bg-white">讲</span><span class="Glyph bg-gray-2 lg:bg-white">座</span></div>
               </div>
               <ul>
                 <% for (const { date, eventName, title, url } of talks) { %>
@@ -161,7 +161,7 @@
           </div>
         </div>
       </main>
-      <footer class="color-gray-2 pb-1.5 pt-1 text-center text-sm">
+      <footer class="color-gray-2 py-1.5 text-center text-sm">
         <p>Made in Singapore</p>
       </footer>
     </div>
