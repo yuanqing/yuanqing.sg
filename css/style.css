@@ -1,8 +1,9 @@
 :root {
   color-scheme: dark;
   --color-black: #000;
-  --color-gray-1: #333;
-  --color-gray-2: #808080;
+  --color-gray-1: rgba(255, 255, 255, 0.18);
+  --color-gray-2: rgba(255, 255, 255, 0.53);
+  --color-gray-3: rgba(255, 255, 255, 0.83);
   --color-white: #fff;
 }
 
@@ -124,6 +125,9 @@ html {
 }
 .color-gray-2 {
   color: var(--color-gray-2);
+}
+.color-gray-3 {
+  color: var(--color-gray-3);
 }
 .color-white {
   color: var(--color-white);

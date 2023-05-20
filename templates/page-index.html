@@ -25,7 +25,7 @@
     <meta property="og:title" content="<%- title %>" />
     <meta property="og:url" content="<%- url %>" />
   </head>
-  <body class="bg-black color-white font-sans text-base selection:bg-white selection:color-black">
+  <body class="bg-black color-gray-3 font-sans text-base selection:bg-white selection:color-black">
     <div class="Container m-auto px-1 md:px-0">
       <header class="pt-2 md:pt-3">
         <div class="pb-1.5 md:gap-x-1 md:grid md:grid-cols-2">
@@ -34,7 +34,7 @@
         </div>
         <div class="pb-1.5 lg:gap-x-1 lg:grid lg:grid-cols-2">
           <div class="HeroImage" style="background-image: url(/media/yuanqing.jpg)"></div>
-          <p class="pt-1 text-lg lg:border-gray-1 lg:border-t-1 lg:row-start-1"><%- description %></p>
+          <p class="color-white pt-1 text-lg lg:border-gray-1 lg:border-t-1 lg:row-start-1"><%- description %></p>
         </div>
       </header>
       <main>
@@ -62,13 +62,13 @@
         <div class="pt-2 md:pt-3 lg:gap-x-1 lg:grid lg:grid-cols-2 lg:pt-2.5">
           <article>
             <div class="flex gap-0.5 lg:flex-col-reverse lg:gap-0.25">
-              <h2 class="pb-1.75 pt-0.25 text-xl lg:pt-0">Making</h2>
+              <h2 class="color-white pb-1.75 pt-0.25 text-xl lg:pt-0">Making</h2>
               <div aria-hidden="true" class="pt-0.25 lg:pt-0"><span class="Glyph bg-gray-2 lg:bg-white">创</span><span class="Glyph bg-gray-2 lg:bg-white">作</span></div>
             </div>
             <ul>
               <% for (const { title, description, url } of projects.highlights) { %>
               <li>
-                <a class="block border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg" href="<%- url %>" target="_blank">
+                <a class="block border-gray-1 border-t-1 color-white pb-1.5 pt-0.5 text-lg" href="<%- url %>" target="_blank">
                   <span class="Underline inline"><%- title %></span>
                   <span class="color-gray-2"><%= widont(description) %></span>
                 </a>
@@ -77,7 +77,7 @@
             </ul>
             <div class="md:gap-x-1 md:grid md:grid-cols-2">
               <div>
-                <h3 class="border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg">Tools and experiments</h3>
+                <h3 class="border-gray-1 border-t-1 color-white pb-1.5 pt-0.5 text-lg">Tools and experiments</h3>
                 <ul>
                   <% for (const { date, title, url } of projects.tools) { %>
                   <li>
@@ -90,7 +90,7 @@
                 </ul>
               </div>
               <div>
-                <h3 class="border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg">Figma plugins</h3>
+                <h3 class="border-gray-1 border-t-1 color-white pb-1.5 pt-0.5 text-lg">Figma plugins</h3>
                 <ul class="border-gray-1 border-t-1 pb-1.5 pt-0.5">
                   <% for (const { date, title, url } of projects.figmaPlugins) { %>
                   <li>
@@ -100,7 +100,7 @@
                   </li>
                   <% } %>
                 </ul>
-                <h3 class="border-gray-1 border-t-1 pb-1.5 pt-0.5 text-lg">Cheatsheets</h3>
+                <h3 class="border-gray-1 border-t-1 color-white pb-1.5 pt-0.5 text-lg">Cheatsheets</h3>
                 <ul class="border-gray-1 border-t-1 pb-1.5 pt-0.5">
                   <% for (const { title, url } of projects.cheatsheets) { %>
                   <li>
@@ -116,7 +116,7 @@
           <div class="md:gap-x-1 md:grid md:grid-cols-2">
             <article class="pt-1.5 lg:pt-0">
               <div class="flex gap-0.5 lg:flex-col-reverse lg:gap-0.25">
-                <h2 class="pb-1.75 pt-0.25 text-xl lg:pt-0">Writing</h2>
+                <h2 class="color-white pb-1.75 pt-0.25 text-xl lg:pt-0">Writing</h2>
                 <div aria-hidden="true" class="pt-0.25 lg:pt-0"><span class="Glyph bg-gray-2 lg:bg-white">写</span><span class="Glyph bg-gray-2 lg:bg-white">作</span></div>
               </div>
               <ul>
@@ -138,7 +138,7 @@
             </article>
             <article class="pt-1.5 lg:pt-0">
               <div class="flex gap-0.5 lg:flex-col-reverse lg:gap-0.25">
-                <h2 class="pb-1.75 pt-0.25 text-xl lg:pt-0">Speaking</h2>
+                <h2 class="color-white pb-1.75 pt-0.25 text-xl lg:pt-0">Speaking</h2>
                 <div aria-hidden="true" class="pt-0.25 lg:pt-0"><span class="Glyph bg-gray-2 lg:bg-white">讲</span><span class="Glyph bg-gray-2 lg:bg-white">座</span></div>
               </div>
               <ul>
