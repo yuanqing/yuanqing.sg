@@ -180,7 +180,11 @@
       },
       {
         "title": "Upscale Image",
-        "url": "https://www.figma.com/community/plugin/939832535166467194/Upscale-Image"
+        "url": "https://figma.com/community/plugin/939832535166467194/Upscale-Image"
+      },
+      {
+        "title": "Variable Utilities",
+        "url": "https://figma.com/community/plugin/1271383289541400562/Variable-Utilities"
       }
     ]
   },
